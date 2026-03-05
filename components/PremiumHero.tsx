@@ -2,135 +2,97 @@
 
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
-import { ArrowRight, ChevronDown } from 'lucide-react';
+import { ArrowRight, Shield, Zap, CheckCircle2 } from 'lucide-react';
 
 export function PremiumHero() {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // 1. Scroll Intelligence for Zoom
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end start"],
   });
 
-  // Zoom-in effect: Subtle and weighted (1.0 to 1.15 is the sweet spot for premium)
-  const springConfig = { stiffness: 45, damping: 20, mass: 1.2 };
-  const imageScale = useSpring(useTransform(scrollYProgress, [0, 1], [1, 1.15]), springConfig);
-  const imageOpacity = useTransform(scrollYProgress, [0, 0.7], [0.6, 0.2]);
-  
-  // Content lift parallax
-  const contentY = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const contentOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const springConfig = { stiffness: 40, damping: 25 };
+  const imageScale = useSpring(useTransform(scrollYProgress, [0, 1], [1, 1.1]), springConfig);
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, 100]);
 
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-white selection:bg-cyan-500/30"
+      className="relative min-h-[100svh] w-full flex items-center justify-center overflow-hidden bg-[#FAFAFA]"
     >
-      {/* Darker Dot Grid with Fade Out */}
-      <div className="absolute inset-0 dot-grid-zinc pointer-events-none [mask-image:radial-gradient(circle_at_center,black_40%,transparent_80%)] z-10" />
-
-      {/* --- BACKGROUND ENGINE --- */}
-      <div className="absolute inset-0 z-0">
+      {/* --- PREMIUM BACKGROUND ENGINE --- */}
+      {/* The image is pushed to the background, highly colored, but masked so the center is perfectly clean */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
         <motion.div 
-          style={{ scale: imageScale, opacity: imageOpacity }} 
+          style={{ scale: imageScale, y: imageY }} 
           className="relative w-full h-full"
         >
+          {/* Visible, colored image */}
           <div 
-            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop')] bg-cover bg-center origin-center"
+            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop')] bg-cover bg-center saturate-[1.4] contrast-125 opacity-60"
           />
-          {/* Layered vignette for depth */}
-          <div className="absolute inset-0 bg-linear-to-b from-white via-transparent to-white opacity-20" />
-          <div className="absolute inset-0 bg-cyan-900/5" /> {/* Added a very subtle cyan tint instead of heavy white */}
+          {/* The "Spotlight" Mask: Pure white in the center, fading to transparent at the edges */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(250,250,250,1)_20%,_rgba(250,250,250,0.85)_50%,_rgba(250,250,250,0)_100%)]" />
         </motion.div>
       </div>
 
-      {/* --- CONTENT LAYER --- */}
-      <motion.div 
-        style={{ y: contentY, opacity: contentOpacity }}
-        className="container relative z-20 px-6 mx-auto pt-20"
-      >
-        <div className="max-w-3xl mx-auto text-center">
-          
-          {/* Compact Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/5 border border-slate-900/10 backdrop-blur-xl mb-6"
-          >
-            <div className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-pulse" />
-            <span className="text-[9px] font-black tracking-[0.3em] text-slate-900/60 uppercase">
-              🔒 Enterprise Security Solutions
+      {/* --- COMPACT, HIGH-CONVERTING UI --- */}
+      <div className="container relative z-10 px-4 mx-auto flex flex-col items-center justify-center py-12 sm:py-0">
+        
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="max-w-3xl mx-auto flex flex-col items-center text-center w-full"
+        >
+          {/* High-End Trust Badge */}
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm mb-6 sm:mb-8">
+            <Shield className="w-3.5 h-3.5 text-cyan-600" />
+            <span className="text-[10px] sm:text-[11px] font-bold tracking-wide text-slate-700 uppercase">
+              Enterprise Security V2.0
             </span>
-          </motion.div>
+          </div>
 
-          {/* Heading: Compact & High-Impact */}
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.1 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tighter text-slate-900 leading-[0.95] mb-6"
-          >
-            Tactical <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-b from-slate-900 via-slate-800 to-cyan-700">
-              Cyber Defense.
+          {/* Compact, Powerful Headline */}
+          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] sm:leading-[1.05] mb-6">
+            Tactical defense for <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">
+              critical infrastructure.
             </span>
-          </motion.h1>
+          </h1>
 
-          {/* Subtext: Tighter width for better readability */}
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-700 font-bold leading-relaxed mb-10 px-4"
-          >
-            We engineer impenetrable digital perimeters for the global enterprise. 
-            Leveraging AI-driven threat intelligence and zero-trust architecture 
-            to protect your most critical infrastructure assets 24/7.
-          </motion.p>
+          {/* Focused Subheadline */}
+          <p className="max-w-xl text-sm sm:text-base md:text-lg text-slate-600 font-medium leading-relaxed mb-8 sm:mb-10 px-4 sm:px-0">
+            Military-grade encryption and autonomous threat mitigation. Protect your global digital assets with zero-latency AI response.
+          </p>
 
-          {/* CTAs: Unified size */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <button className="group relative w-full sm:w-auto px-8 py-3.5 bg-slate-900 text-white text-[10px] font-black rounded-xl transition-all hover:scale-105 active:scale-95 shadow-premium overflow-hidden uppercase tracking-widest">
-              <div className="absolute inset-0 btn-dot-pattern opacity-20 group-hover:opacity-30 transition-opacity" />
-              <span className="relative z-10 flex items-center justify-center gap-2">
-                Get Free Consultation <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </span>
+          {/* High-Conversion CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-slate-900 text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(8,145,178,0.3)] hover:bg-cyan-600 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group uppercase tracking-widest">
+              Deploy Protection 
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="group relative w-full sm:w-auto px-8 py-3.5 bg-white border-2 border-slate-900 text-slate-900 text-[10px] font-black rounded-xl transition-all hover:bg-slate-50 active:scale-95 shadow-premium overflow-hidden uppercase tracking-widest">
-              <div className="absolute inset-0 btn-dot-pattern opacity-10 group-hover:opacity-20 transition-opacity" />
-              <span className="relative z-10">Explore Services</span>
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-white text-slate-900 text-xs sm:text-sm font-bold rounded-xl border border-slate-200 shadow-sm hover:bg-slate-50 transition-all active:scale-[0.98] uppercase tracking-widest">
+              Book a Demo
             </button>
-          </motion.div>
+          </div>
 
-          {/* Compact Stats */}
-          <div className="flex items-center justify-center gap-6 md:gap-12 mt-12 py-6 border-y border-slate-100">
+          {/* Compact Trust Metrics Strip */}
+          <div className="mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-slate-200/60 w-full max-w-2xl flex flex-wrap justify-center sm:justify-between items-center gap-4 sm:gap-6">
             {[
-              { label: "Clients", val: "200+" },
-              { label: "Experience", val: "25y+" },
-              { label: "Uptime", val: "99.9%" }
-            ].map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-base md:text-lg font-bold text-slate-900 tracking-tighter">{stat.val}</div>
-                <div className="text-[8px] uppercase tracking-widest text-slate-500 mt-1 font-bold">{stat.label}</div>
+              { icon: Zap, text: "< 10ms Latency" },
+              { icon: CheckCircle2, text: "99.99% Uptime SLA" },
+              { icon: Shield, text: "SOC2 Type II Certified" }
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2">
+                <item.icon className="w-3.5 h-3.5 sm:w-4 h-4 text-cyan-600" />
+                <span className="text-[10px] sm:text-xs font-semibold text-slate-600">{item.text}</span>
               </div>
             ))}
           </div>
-        </div>
-      </motion.div>
 
-
-
-      {/* Subtle Scroll Hint */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-2 opacity-20">
-        <div className="w-px h-10 bg-linear-to-b from-white to-transparent" />
-       
+        </motion.div>
       </div>
     </section>
   );
