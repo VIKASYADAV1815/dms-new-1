@@ -33,6 +33,7 @@ const testimonials = [
 export default function Testimonials() {
   return (
     <section className="py-24 px-6 bg-[#08090B] relative overflow-hidden">
+            <div className="absolute top-0 left-50 right-50 h-px bg-linear-to-r from-transparent via-cyan-500/20 to-transparent" />
       
       {/* --- SHARED PREMIUM BACKGROUND --- */}
       {/* 1. Dot Pattern with Top-Down Fade Mask (UNCHANGED) */}
