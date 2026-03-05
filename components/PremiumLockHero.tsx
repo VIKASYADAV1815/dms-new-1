@@ -9,12 +9,12 @@ export function PremiumLockHero() {
   const glints = Array.from({ length: 20 });
 
   return (
-    <section className="relative min-h-[90vh] flex items-center bg-[#020203] py-20 px-6 overflow-hidden">
+    <section className="relative min-h-[90vh] flex items-center bg-[#08090B] py-20 px-6 overflow-hidden">
       {/* 1. Deep Space Environment */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,#0A0D14_0%,#020203_100%)]" />
         {/* Sub-pixel Grid for "Scale" */}
-        <div className="absolute inset-0 opacity-[0.07] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] bg-[grid:30px_30px] bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]" />
+        <div className="absolute inset-0 opacity-[0.07] mask-[radial-gradient(ellipse_at_center,black,transparent)] bg-[grid:30px_30px] bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]" />
       </div>
 
       <div className="mx-auto max-w-7xl relative z-10 w-full">
@@ -22,7 +22,7 @@ export function PremiumLockHero() {
           
           {/* LEFT: Freestanding Lock with High-Visibility Sparkles */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
-            <div className="relative w-full max-w-[360px] aspect-square flex items-center justify-center">
+            <div className="relative w-full max-w-90 aspect-square flex items-center justify-center">
               
               {/* HIGH VISIBILITY PARTICLE FIELD */}
               {glints.map((_, i) => (
@@ -44,8 +44,8 @@ export function PremiumLockHero() {
                 >
                   {/* The Flare: Core + Glow */}
                   <div className="relative">
-                    <div className="w-[3px] h-[3px] bg-white rounded-full shadow-[0_0_12px_4px_#22d3ee]" />
-                    <div className="absolute inset-[-4px] bg-cyan-400/20 blur-sm rounded-full" />
+                    <div className="w-0.75 h-0.75 bg-white rounded-full shadow-[0_0_12px_4px_#22d3ee]" />
+                    <div className="absolute -inset-1 bg-cyan-400/20 blur-sm rounded-full" />
                   </div>
                 </motion.div>
               ))}
@@ -53,19 +53,19 @@ export function PremiumLockHero() {
               {/* The Lock Object */}
               <div className="relative z-10 w-full h-full flex items-center justify-center">
                 {/* 3D Shackle (Hardened Steel look) */}
-                <div className="absolute top-6 w-32 h-44 border-[12px] border-[#16181D] rounded-t-[3.5rem] shadow-[inset_-2px_4px_10px_rgba(255,255,255,0.05)]">
+                <div className="absolute top-6 w-32 h-44 border-12 border-[#16181D] rounded-t-[3.5rem] shadow-[inset_-2px_4px_10px_rgba(255,255,255,0.05)]">
                   {/* Top Rim Light */}
                   <div className="absolute inset-0 border-t-2 border-white/10 rounded-t-[3.5rem]" />
                 </div>
 
                 {/* Main Chassis: Anisotropic Metal */}
-                <div className="relative w-52 h-44 bg-gradient-to-br from-[#1E2229] via-[#0E1014] to-[#040506] rounded-[2rem] shadow-[0_60px_100px_-20px_rgba(0,0,0,1)] border border-white/5 flex items-center justify-center overflow-hidden">
+                <div className="relative w-52 h-44 bg-linear-to-br from-[#1E2229] via-[#0E1014] to-[#040506] rounded-4xl shadow-[0_60px_100px_-20px_rgba(0,0,0,1)] border border-white/5 flex items-center justify-center overflow-hidden">
                   
                   {/* Subtle Shimmer across the face */}
                   <motion.div 
                     animate={{ x: [-200, 400] }}
                     transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-y-0 w-20 bg-gradient-to-r from-transparent via-white/[0.03] to-transparent -skew-x-12"
+                    className="absolute inset-y-0 w-20 bg-linear-to-r from-transparent via-white/3 to-transparent -skew-x-12"
                   />
 
                   {/* High-Precision Core */}
@@ -87,7 +87,7 @@ export function PremiumLockHero() {
                     <motion.div 
                       animate={{ y: [-30, 30] }}
                       transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute inset-x-6 h-[1px] bg-cyan-400/40 shadow-[0_0_10px_#22d3ee]"
+                      className="absolute inset-x-6 h-px bg-cyan-400/40 shadow-[0_0_10px_#22d3ee]"
                     />
                   </div>
 
@@ -108,7 +108,7 @@ export function PremiumLockHero() {
           <div className="lg:col-span-7 space-y-10">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-6 h-[1px] bg-cyan-500/50" />
+                <div className="w-6 h-px bg-cyan-500/50" />
                 <span className="text-[10px] font-black text-cyan-500 uppercase tracking-[0.4em]">Secure Protocol v4.0</span>
               </div>
 
@@ -118,13 +118,13 @@ export function PremiumLockHero() {
                 <span className="text-cyan-400 drop-shadow-[0_0_20px_rgba(34,211,238,0.2)]">CYBER DEFENSE.</span>
               </h1>
 
-              <p className="text-sm text-slate-500 leading-relaxed max-w-md font-medium">
+              <p className="text-sm md:text-base text-slate-500 leading-relaxed max-w-md font-medium">
                 25+ Years of tactical engineering for 200+ global enterprises. We protect the digital infrastructure India's largest corporations rely on.
               </p>
             </div>
 
             {/* Industrial Data Bar */}
-            <div className="flex gap-12 border-t border-white/[0.03] pt-8">
+            <div className="flex gap-12 border-t border-white/3 pt-8">
               {[
                 { label: 'Enterprises', value: '200+', icon: <ShieldCheck className="w-3 h-3" /> },
                 { label: 'Tactical Exp', value: '25+ Yrs', icon: null },

@@ -25,7 +25,7 @@ export function PremiumHero() {
   return (
     <section 
       ref={containerRef}
-      className="relative min-h-[100vh] w-full flex items-center justify-center overflow-hidden bg-[#020306] selection:bg-cyan-500/30"
+      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-[#08090B] selection:bg-cyan-500/30"
     >
       {/* --- BACKGROUND ENGINE --- */}
       <div className="absolute inset-0 z-0">
@@ -34,10 +34,10 @@ export function PremiumHero() {
           className="relative w-full h-full"
         >
           <div 
-            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop')] bg-cover bg-center origin-center grayscale-[30%]"
+            className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1600&h=900&fit=crop')] bg-cover bg-center origin-center grayscale-30"
           />
           {/* Layered vignette for depth */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#020306] via-transparent to-[#020306]" />
+          <div className="absolute inset-0 bg-linear-to-b from-[#020306] via-transparent to-[#020306]" />
           <div className="absolute inset-0 bg-[#020306]/40" />
         </motion.div>
       </div>
@@ -54,7 +54,7 @@ export function PremiumHero() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-xl mb-8"
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/3 border border-white/10 backdrop-blur-xl mb-8"
           >
             <div className="w-1 h-1 rounded-full bg-cyan-400" />
             <span className="text-[9px] font-bold tracking-[0.3em] text-white/40 uppercase">
@@ -70,7 +70,7 @@ export function PremiumHero() {
             className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tighter text-white leading-[1.1] mb-6"
           >
             Your Business <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40">
+            <span className="text-transparent bg-clip-text bg-linear-to-b from-white to-white/40">
               Security Matters
             </span>
           </motion.h1>
@@ -99,13 +99,13 @@ export function PremiumHero() {
               </span>
             </button>
             
-            <button className="w-full sm:w-auto px-8 py-3.5 bg-white/[0.03] border border-white/10 text-white text-sm font-bold rounded-lg backdrop-blur-md hover:bg-white/[0.08] transition-all">
+            <button className="w-full sm:w-auto px-8 py-3.5 bg-white/3 border border-white/10 text-white text-sm font-bold rounded-lg backdrop-blur-md hover:bg-white/8 transition-all">
               Learn Our Services
             </button>
           </motion.div>
 
           {/* Compact Stats */}
-          <div className="flex items-center justify-center gap-8 md:gap-16 mt-16 py-6 border-y border-white/[0.05]">
+          <div className="flex items-center justify-center gap-8 md:gap-16 mt-16 py-6 border-y border-white/5">
             {[
               { label: "Clients", val: "200+" },
               { label: "Experience", val: "25y+" },
@@ -124,7 +124,7 @@ export function PremiumHero() {
 
       {/* Subtle Scroll Hint */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-2 opacity-20">
-        <div className="w-[1px] h-10 bg-gradient-to-b from-white to-transparent" />
+        <div className="w-px h-10 bg-linear-to-b from-white to-transparent" />
        
       </div>
     </section>

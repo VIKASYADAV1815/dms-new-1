@@ -9,17 +9,17 @@ export function DataBreachSection() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <section className="relative bg-[#08090B] py-20 px-6 overflow-hidden border-y border-white/[0.03]">
+    <section className="relative bg-[#08090B] py-20 px-6 overflow-hidden border-y border-white/10">
       {/* Background Utility Grid */}
-      <div className="absolute inset-0 opacity-[0.02] [mask-image:radial-gradient(ellipse_at_center,black,transparent)] pointer-events-none bg-[grid:20px_20px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]" />
+      <div className="absolute inset-0 opacity-[0.02] mask-[radial-gradient(ellipse_at_center,black,transparent)] pointer-events-none bg-[grid:20px_20px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]" />
       
       <div className="mx-auto max-w-5xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left: Compact Aesthetic Visual (5 Columns) */}
           <div className="lg:col-span-5 relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-br from-cyan-500/20 to-blue-500/0 rounded-2xl blur-sm opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="relative h-[480px] rounded-2xl overflow-hidden border border-white/10 bg-[#0C0E12]">
+            <div className="absolute -inset-0.5 bg-linear-to-br from-cyan-500/20 to-blue-500/0 rounded-2xl blur-sm opacity-50 group-hover:opacity-100 transition-opacity" />
+            <div className="relative h-120 rounded-2xl overflow-hidden border border-white/10 bg-[#0C0E12]">
               <Image
                 src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop"
                 alt="Infrastructure"
@@ -37,13 +37,13 @@ export function DataBreachSection() {
                 </div>
               </div>
               
-              <div className="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-[#08090B] to-transparent">
+              <div className="absolute bottom-0 inset-x-0 p-6 bg-linear-to-t from-[#08090B] to-transparent">
                 <Activity className="w-4 h-4 text-cyan-500 animate-pulse mb-2" />
                 <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
                   <motion.div 
                     animate={{ x: ["-100%", "100%"] }}
                     transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-                    className="h-full w-1/3 bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent" 
+                    className="h-full w-1/3 bg-linear-to-r from-transparent via-cyan-500/50 to-transparent" 
                   />
                 </div>
               </div>
@@ -75,11 +75,11 @@ export function DataBreachSection() {
 
             {/* Micro-Stats Bento */}
             <div className="flex gap-4">
-              <div className="flex-1 p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between group hover:bg-white/[0.04] transition-colors">
+              <div className="flex-1 p-4 rounded-xl bg-white/2 border border-white/6 flex flex-col justify-between group hover:bg-white/4 transition-colors">
                 <span className="text-2xl font-black text-white tracking-tighter">$3.86M</span>
                 <span className="text-[9px] text-slate-500 uppercase font-bold tracking-widest mt-1">Avg Breach Cost</span>
               </div>
-              <div className="flex-1 p-4 rounded-xl bg-white/[0.02] border border-white/[0.06] flex flex-col justify-between group hover:bg-white/[0.04] transition-colors">
+              <div className="flex-1 p-4 rounded-xl bg-white/2 border border-white/6 flex flex-col justify-between group hover:bg-white/4 transition-colors">
                 <span className="text-2xl font-black text-cyan-500 tracking-tighter">25+</span>
                 <span className="text-[9px] text-slate-500 uppercase font-bold tracking-widest mt-1">Years Experience</span>
               </div>
@@ -92,7 +92,7 @@ export function DataBreachSection() {
               className="group relative flex items-center gap-6"
             >
               <div className="relative w-12 h-12 rounded-full border border-white/10 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:border-cyan-500 group-hover:w-40">
-                <div className="absolute inset-0 bg-cyan-500 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-cyan-500 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
                 <AnimatePresence mode="wait">
                   {!hovered ? (
                     <motion.div key="icon" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>

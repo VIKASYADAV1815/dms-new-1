@@ -29,10 +29,13 @@ const features = [
 
 export function InfrastructureSecure() {
   return (
-    <section className="bg-[#020203] py-24 px-6 font-sans">
-      <div className="mx-auto max-w-6xl">
+    <section className="bg-[#08090B] py-24 px-6 font-sans relative overflow-hidden">
+      {/* Background Grid - Kept very subtle at 0.03 */}
+      <div className="absolute inset-0 opacity-[0.03] bg-[grid:24px_24px] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] mask-[radial-gradient(ellipse_at_center,black,transparent)]" />
+      
+      <div className="mx-auto max-w-6xl relative z-10">
         
-        {/* Header: Refined Micro-Typergaphy */}
+        {/* Header */}
         <div className="max-w-3xl mb-20">
           <div className="flex items-center gap-2 mb-4">
             <div className="w-1.5 h-1.5 rounded-full bg-blue-600 shadow-[0_0_8px_#2563eb]" />
@@ -47,7 +50,7 @@ export function InfrastructureSecure() {
           </p>
         </div>
 
-        {/* Feature Cards: Small Font Edition */}
+        {/* Feature Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-24">
           {features.map((feature, idx) => (
             <motion.div
@@ -55,43 +58,60 @@ export function InfrastructureSecure() {
               whileHover={{ y: -4 }}
               className="group relative"
             >
-              {/* THE TOP SIDE BEAM (Refined Velocity Signature) */}
-              <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700" />
+              {/* TOP SIDE BEAM */}
+              <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-700 z-20" />
 
-              <div className="h-full bg-[#080809] border border-white/[0.04] rounded-xl p-6 transition-all duration-500 group-hover:bg-[#0B0B0C] group-hover:border-white/[0.1]">
+              <div className="h-full bg-[#080809] border border-white/4 rounded-xl p-6 transition-all duration-500 group-hover:bg-[#0B0B0C] group-hover:border-white/10 relative overflow-hidden">
                 
-                <div className="flex justify-between items-start mb-14">
-                  <div className="w-10 h-10 rounded-lg bg-black border border-white/[0.06] flex items-center justify-center group-hover:border-blue-500/40 transition-colors">
-                    <feature.icon className="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition-colors" />
-                  </div>
-                  <span className="text-[9px] font-black text-white/5 group-hover:text-white/20 transition-colors tracking-widest tabular-nums">
-                    {feature.tag}
-                  </span>
-                </div>
+                {/* --- CENTERED 8PX MICRO-GRID --- */}
+                <div 
+                  className="absolute inset-0 opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none z-0"
+                  style={{
+                    backgroundImage: `
+                      linear-gradient(to right, #ffffff 1px, transparent 1px),
+                      linear-gradient(to bottom, #ffffff 1px, transparent 1px)
+                    `,
+                    backgroundSize: '8px 8px',
+                    // Centered mask: focus on center, fade to all sides
+                    maskImage: 'radial-gradient(circle at 50% 50%, black 0%, transparent 70%)',
+                    WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 0%, transparent 70%)',
+                  }}
+                />
 
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between">
-                    <h3 className="text-sm font-bold text-white tracking-tight uppercase">
-                      {feature.title}
-                    </h3>
-                    <span className="text-[10px] font-bold text-white/10">{feature.number}</span>
+                <div className="relative z-10">
+                  <div className="flex justify-between items-start mb-14">
+                    <div className="w-10 h-10 rounded-lg bg-black border border-white/6 flex items-center justify-center group-hover:border-blue-500/40 transition-colors">
+                      <feature.icon className="w-4 h-4 text-slate-500 group-hover:text-blue-400 transition-colors" />
+                    </div>
+                    <span className="text-[9px] font-black text-white/5 group-hover:text-white/20 transition-colors tracking-widest tabular-nums">
+                      {feature.tag}
+                    </span>
                   </div>
-                  <p className="text-[11px] text-slate-500 leading-relaxed font-medium tracking-tight group-hover:text-slate-400 transition-colors">
-                    {feature.description}
-                  </p>
-                </div>
 
-                <div className="mt-8 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
-                  <span className="text-[9px] font-black text-blue-500 uppercase tracking-widest">Execute_Module</span>
-                  <ArrowUpRight className="w-3 h-3 text-blue-500" />
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-sm font-bold text-white tracking-tight uppercase">
+                        {feature.title}
+                      </h3>
+                      <span className="text-[10px] font-bold text-white/10">{feature.number}</span>
+                    </div>
+                    <p className="text-[11px] text-slate-500 leading-relaxed font-medium tracking-tight group-hover:text-slate-400 transition-colors">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-8 flex items-center justify-between opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+                    <span className="text-[9px] font-black text-blue-500 uppercase tracking-widest">Execute_Module</span>
+                    <ArrowUpRight className="w-3 h-3 text-blue-500" />
+                  </div>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom Section: Technical Specs */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start pt-16 border-t border-white/[0.03]">
+        {/* Bottom Section */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start pt-16 border-t border-white/3">
           <div className="space-y-8">
             <h3 className="text-2xl font-bold text-white tracking-tighter">
               Complete protection <br /> 
@@ -113,8 +133,7 @@ export function InfrastructureSecure() {
             </div>
           </div>
 
-          {/* Minimal Metric HUD */}
-          <div className="relative bg-[#050505] rounded-2xl p-8 border border-white/[0.05] overflow-hidden group">
+          <div className="relative bg-[#050505] rounded-2xl p-8 border border-white/5 overflow-hidden group">
             <div className="absolute top-0 right-0 p-4">
                <div className="w-1 h-1 rounded-full bg-blue-500 animate-pulse" />
             </div>
@@ -130,8 +149,7 @@ export function InfrastructureSecure() {
               </div>
             </div>
 
-            {/* Micro ISO Label */}
-            <div className="mt-10 pt-6 border-t border-white/[0.03] flex justify-between items-center">
+            <div className="mt-10 pt-6 border-t border-white/3 flex justify-between items-center">
               <span className="text-[9px] font-black text-white/20 uppercase tracking-[0.3em]">Certification_Standard</span>
               <div className="flex items-center gap-2">
                 <span className="text-[10px] font-black text-white italic">ISO 27001</span>

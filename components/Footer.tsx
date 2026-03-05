@@ -9,9 +9,9 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#020203] pt-24 pb-12 px-6 relative overflow-hidden">
+    <footer className="bg-[#08090B] pt-24 pb-12 px-6 relative overflow-hidden">
       {/* Top Precision Scan Line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-cyan-500/20 to-transparent" />
 
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
@@ -25,7 +25,7 @@ export default function Footer() {
               <span className="font-bold text-white text-sm tracking-tighter uppercase">DM_Systems</span>
             </div>
             
-            <p className="text-[11px] text-slate-500 uppercase tracking-widest leading-relaxed max-w-[240px]">
+            <p className="text-[11px] text-slate-500 uppercase tracking-widest leading-relaxed max-w-60">
               Fortifying enterprise infrastructure since 1999. <br /> 
               <span className="text-white/20">Trusted by 200+ global organizations.</span>
             </p>

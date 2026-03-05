@@ -36,19 +36,15 @@ const services = [
   }
 ];
 
-// FIXED: Using "export function" to match your page.tsx import
 export function ServicesEnhanced() {
   return (
-    <section className="bg-[#020203] py-24 px-6 relative overflow-hidden border-t border-white/5">
-      {/* Precision Top Scan Line */}
-      <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent" />
+    <section className="bg-[#08090B] py-24 px-6 relative overflow-hidden border-t border-white/5">
+      {/* Global grid removed to keep bg color solid #08090B */}
       
       <div className="max-w-6xl mx-auto relative z-10">
-        
-        {/* Obsidian Header */}
         <div className="mb-20">
           <div className="flex items-center gap-3 mb-6">
-            <div className="h-[1px] w-12 bg-cyan-500" />
+            <div className="h-px w-12 bg-cyan-500" />
             <span className="text-[9px] font-black text-cyan-500 uppercase tracking-[0.4em]">Operational_Matrix</span>
           </div>
           
@@ -58,7 +54,6 @@ export function ServicesEnhanced() {
           </h2>
         </div>
 
-        {/* The Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {services.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
@@ -79,9 +74,23 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative h-[360px] rounded-xl bg-[#080809] border border-white/[0.04] overflow-hidden hover:border-cyan-500/30 transition-all duration-500"
+      className="group relative h-96 rounded-xl bg-[#080809] border border-white/5 overflow-hidden hover:border-cyan-500/30 transition-all duration-500"
     >
-      {/* Image Reveal with Darker Contrast */}
+      {/* --- REDUCED 8PX MICRO-GRID WITH FADE --- */}
+      <div 
+        className="absolute inset-0 opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none z-10"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, #ffffff 1px, transparent 1px),
+            linear-gradient(to bottom, #ffffff 1px, transparent 1px)
+          `,
+          backgroundSize: '8px 8px',
+          maskImage: 'radial-gradient(circle at 50% 0%, black 10%, transparent 75%)',
+          WebkitMaskImage: 'radial-gradient(circle at 50% 0%, black 10%, transparent 75%)',
+        }}
+      />
+
+      {/* Image Reveal */}
       <div className="absolute inset-0 z-0 opacity-[0.05] group-hover:opacity-20 transition-all duration-1000">
         <Image
           src={service.image}
@@ -89,7 +98,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
           fill
           className="object-cover grayscale group-hover:scale-110 transition-transform duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080809] via-[#080809]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080809] via-[#080809]/80 to-transparent" />
       </div>
 
       {/* Content */}
@@ -119,8 +128,9 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
               <ArrowRight className="w-3 h-3 text-cyan-400" />
             </motion.div>
           </div>
-          <div className="h-[1px] w-full bg-white/5 relative overflow-hidden">
+          <div className="h-px w-full bg-white/5 relative overflow-hidden">
             <motion.div 
+              initial={{ width: '0%' }}
               animate={{ width: hovered ? '100%' : '0%' }}
               className="absolute inset-y-0 left-0 bg-cyan-500 shadow-[0_0_8px_#22d3ee]" 
             />

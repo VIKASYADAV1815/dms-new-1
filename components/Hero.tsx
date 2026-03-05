@@ -156,13 +156,13 @@ export default function Hero() {
           </div>
 
           {/* Right side - Animated Network Visualization */}
-          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden border border-border/50 bg-gradient-to-br from-background to-muted/30 fade-up-delay-1">
+          <div className="relative h-96 md:h-full min-h-96 rounded-2xl overflow-hidden border border-border/50 bg-linear-to-br from-background to-muted/30 fade-up-delay-1">
             <canvas
               ref={canvasRef}
               className="w-full h-full"
             />
             {/* Glow overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent pointer-events-none"></div>
+            <div className="absolute inset-0 bg-linear-to-t from-background via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>
       </div>

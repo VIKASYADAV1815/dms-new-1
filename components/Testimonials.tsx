@@ -32,95 +32,120 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-6 bg-[#020203] relative overflow-hidden">
-      {/* Background Structural Grid */}
-      <div className="absolute inset-0 opacity-[0.03] bg-[grid:24px_24px] bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
+    <section className="py-24 px-6 bg-[#08090B] relative overflow-hidden">
+      
+      {/* --- SHARED PREMIUM BACKGROUND --- */}
+      {/* 1. Dot Pattern with Top-Down Fade Mask (UNCHANGED) */}
+      <div 
+        className="absolute inset-0 opacity-[0.12] mix-blend-screen"
+        style={{
+          backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
+          backgroundSize: '32px 32px',
+          maskImage: 'radial-gradient(ellipse 80% 50% at 50% 0%, black, transparent)',
+          WebkitMaskImage: 'radial-gradient(ellipse 80% 50% at 50% 0%, black, transparent)',
+        }}
+      />
+
+      {/* 2. Top-Center Ambient Glow (UNCHANGED) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 bg-cyan-500/5 blur-[120px] rounded-full" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         
-        {/* Massive Header / Micro-Subhead Contrast */}
+        {/* Header Section */}
         <div className="mb-24">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-[1px] w-12 bg-cyan-500" />
-            <span className="text-[9px] font-black text-cyan-500 uppercase tracking-[0.4em]">Client_Feedback</span>
-          </div>
+          <motion.div 
+            initial={{ width: 0 }}
+            whileInView={{ width: 48 }}
+            className="h-px bg-cyan-500 mb-6" 
+          />
+          <span className="text-[10px] font-black text-cyan-500 uppercase tracking-[0.5em] block mb-6">
+            Client_Feedback
+          </span>
           
           <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-white leading-[0.85] mb-8">
             TRUSTED <br />
             <span className="text-white/20 italic font-medium">VOICES.</span>
           </h2>
           
-          <p className="text-[11px] text-slate-500 max-w-sm leading-relaxed font-medium uppercase tracking-widest border-l border-white/10 pl-4">
+          <p className="text-[11px] text-slate-500 max-w-sm leading-relaxed font-medium uppercase tracking-[0.2em] border-l border-white/10 pl-4">
             Hear from enterprise leaders who have <br /> 
-            hardened their infrastructure with our systems.
+            <span className="text-slate-400/40 font-bold tracking-tighter uppercase text-[9px]">
+              hardened their infrastructure with our systems.
+            </span>
           </p>
         </div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 10 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }} 
-              className="group relative h-full bg-[#080809] border border-white/[0.04] rounded-xl p-6 overflow-hidden transition-all duration-500 hover:bg-[#0C0C0E] hover:border-cyan-500/20 hover:shadow-[0_20px_50px_rgba(0,0,0,1)]"
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="group relative h-full bg-[#080809]/50 backdrop-blur-sm border border-white/4 rounded-2xl p-8 overflow-hidden transition-all duration-500 hover:bg-[#0c0c0e] hover:border-white/8"
             >
+              {/* INTERNAL CARD DOTS (ADDED WITHOUT CHANGING TOP PATTERN) */}
+              <div 
+                className="absolute inset-0 opacity-[0.05] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none"
+                style={{
+                  backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
+                  backgroundSize: '20px 20px',
+                }}
+              />
+
+              {/* Subtle Noise Texture for card depth */}
+              <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
               
-              {/* Perimeter Geometry Scan Animation */}
-              <div className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <svg className="absolute inset-[-1px] w-[calc(100%+2px)] h-[calc(100%+2px)] pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
-                    <motion.path 
-                        d="M 0 10 L 10 0 L 100 0" 
-                        fill="none" 
-                        stroke="#22d3ee" 
-                        strokeWidth="0.5" 
-                        strokeLinecap="round"
-                        initial={{ pathLength: 0 }}
-                        whileHover={{ pathLength: 1 }}
-                        transition={{ duration: 0.8, ease: "easeInOut" }}
-                    />
-                </svg>
-                {/* Visual bloom in corner */}
-                <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 blur-2xl rounded-full" />
-              </div>
+              {/* Card Corner Accents */}
+              <div className="absolute top-0 left-0 w-8 h-px bg-linear-to-r from-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-0 left-0 w-px h-8 bg-linear-to-b from-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               {/* Header: Stars & Quote */}
-              <div className="flex justify-between items-start mb-8 relative z-10">
-                <div className="flex gap-0.5">
+              <div className="flex justify-between items-start mb-10 relative z-10">
+                <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-2.5 h-2.5 fill-cyan-500 text-cyan-500 opacity-30 group-hover:opacity-100 transition-opacity" />
+                    <Star key={i} className="w-2.5 h-2.5 fill-cyan-500 text-cyan-500 opacity-20 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110" />
                   ))}
                 </div>
-                <Quote className="w-4 h-4 text-white/5 group-hover:text-cyan-500/20 transition-colors" />
+                <Quote className="w-5 h-5 text-white/5 group-hover:text-cyan-500/10 transition-colors duration-500" />
               </div>
 
-              {/* Content: Small Font Precision */}
-              <p className="text-[12px] text-slate-400 font-medium leading-relaxed mb-10 group-hover:text-slate-200 transition-colors relative z-10">
+              {/* Content */}
+              <p className="text-[13px] text-slate-400 font-medium leading-[1.8] mb-12 group-hover:text-slate-200 transition-colors duration-500 relative z-10">
                 "{testimonial.content}"
               </p>
 
-              {/* Author Footer: Micro-spec */}
-              <div className="flex items-center gap-3 pt-6 border-t border-white/[0.03] group-hover:border-cyan-500/10 transition-colors relative z-10">
-                <div className="w-8 h-8 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all border border-white/10 flex-shrink-0">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-full h-full object-cover"
-                  />
+              {/* Author Footer */}
+              <div className="flex items-center gap-4 pt-8 border-t border-white/3 relative z-10">
+                <div className="relative">
+                    <div className="w-10 h-10 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 border border-white/10 shrink-0">
+                        <img
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            className="w-full h-full object-cover"
+                        />
+                    </div>
+                    {/* Active Status Dot */}
+                    <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-[#020203] rounded-full flex items-center justify-center">
+                        <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse" />
+                    </div>
                 </div>
+                
                 <div className="min-w-0">
-                  <h4 className="text-[11px] font-bold text-white uppercase tracking-tight truncate">
+                  <h4 className="text-[11px] font-bold text-white uppercase tracking-[0.15em] mb-1">
                     {testimonial.name}
                   </h4>
-                  <p className="text-[9px] font-medium text-slate-600 uppercase tracking-wider truncate">
-                    {testimonial.title} <span className="text-white/10 mx-1">/</span> 
-                    <span className="text-cyan-500/60 font-black">{testimonial.company}</span>
+                  <p className="text-[9px] font-medium text-slate-500 uppercase tracking-widest truncate">
+                    {testimonial.title} <span className="text-white/10 mx-1">|</span> 
+                    <span className="text-cyan-500/60 font-black group-hover:text-cyan-400 transition-colors">{testimonial.company}</span>
                   </p>
                 </div>
               </div>
+
+              {/* Hover Glow Bloom */}
+              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-cyan-500/0 group-hover:bg-cyan-500/3 blur-3xl rounded-full transition-all duration-700" />
             </motion.div>
           ))}
         </div>
