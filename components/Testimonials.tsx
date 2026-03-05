@@ -5,28 +5,28 @@ import { Star, Quote, ArrowRight } from 'lucide-react'
 
 const testimonials = [
   {
-    name: 'Sarah_Johnson_V4',
+    name: 'Sarah Johnson',
     title: 'CHIEF SECURITY OFFICER',
-    company: 'Enterprise_Systems_Global',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
+    company: 'Enterprise Systems Global',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop&q=80',
     content: 'DM_Systems architected a multi-layered defense-in-depth strategy that successfully neutralized 12M+ intrusion attempts within the first quarter of deployment.',
     rating: 5,
     status: 'VERIFIED_PARTNER'
   },
   {
-    name: 'Michael_Chen_Sentinel',
+    name: 'Michael Chen',
     title: 'IT INFRASTRUCTURE DIRECTOR',
-    company: 'Financial_Core_Trust',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
+    company: 'Financial Core Trust',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&q=80',
     content: 'The precision of their AI-driven anomaly detection is unparalleled. We achieved 100% compliance alignment across 12 international regulatory frameworks.',
     rating: 5,
     status: 'TACTICAL_ALIGNED'
   },
   {
-    name: 'Emily_Rodriguez_Alpha',
+    name: 'Emily Rodriguez',
     title: 'INFRASTRUCTURE MANAGER',
-    company: 'BioShield_Healthcare',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
+    company: 'BioShield Healthcare',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&q=80',
     content: 'Deployment of their Sentinel-V4 nodes provided real-time visibility into our edge-computing clusters that we previously thought was technically impossible.',
     rating: 5,
     status: 'SYSTEMS_SECURED'
