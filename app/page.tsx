@@ -10,12 +10,14 @@ import CaseStudies from '@/components/CaseStudies'
 import Testimonials from '@/components/Testimonials'
 import CTA from '@/components/CTA'
 import Footer from '@/components/Footer'
+import TrustStats from '@/components/TrustStats'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#08090B]">
+    <div className="min-h-screen bg-white">
       <Header />
       <PremiumHero />
+      <TrustStats />
       <ServicesEnhanced />
       <DataBreachSection />
       <PremiumLockHero />

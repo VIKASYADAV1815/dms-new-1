@@ -8,53 +8,68 @@ import Image from 'next/image';
 const services = [
   {
     id: 1,
-    title: 'Perimeter Security',
-    description: "Securing the boundary between private intranets and the public internet with AI detection.",
-    icon: <Shield className="w-4 h-4" />,
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&q=80',
+    title: 'Network Perimeter',
+    description: 'Advanced firewall systems and multi-layered intrusion detection protocols designed to create an impenetrable digital fortress around your corporate assets.',
+    icon: <Shield className="w-5 h-5" />,
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&q=80',
+    features: ['Next-Gen AI Firewall', 'DDoS Kinetic Shield', 'SD-WAN Encrypted Tunneling']
   },
   {
     id: 2,
-    title: 'Email Security',
-    description: 'Advanced measures to protect account access and organizational communication.',
-    icon: <Mail className="w-4 h-4" />,
-    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80',
+    title: 'Endpoint Defense',
+    description: 'Securing every access vector. Our EDR solutions provide real-time behavioral monitoring and automated kill-switch response for all connected enterprise units.',
+    icon: <Monitor className="w-5 h-5" />,
+    image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80',
+    features: ['Behavioral Zero-Day Analysis', 'Automated Ransomware Isolation', 'Universal Device Control']
   },
   {
     id: 3,
-    title: 'Endpoint Solutions',
-    description: 'Securing remote devices and mobile units with methodology-based defense.',
-    icon: <Monitor className="w-4 h-4" />,
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80',
+    title: 'Data Continuity',
+    description: 'Ensuring your operations never cease. Automated real-time replication and rapid disaster recovery protocols for total organizational resilience.',
+    icon: <BarChart3 className="w-5 h-5" />,
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+    features: ['Geographic Cloud Replication', 'Instantaneous VM Recovery', 'Immutable Data Archiving']
   },
   {
     id: 4,
-    title: 'Security Audits',
-    description: 'Identifying regulatory deficiencies and internal control risks effectively.',
-    icon: <BarChart3 className="w-4 h-4" />,
-    image: 'https://images.unsplash.com/photo-1516557595335-eafcb6052005?w=600&q=80',
+    title: 'Identity Integrity',
+    description: 'Military-grade IAM and biometric authentication layers. We ensure that only authorized personnel can access sensitive infrastructure nodes.',
+    icon: <Mail className="w-5 h-5" />,
+    image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=800&q=80',
+    features: ['Biometric Multi-Factor Auth', 'Zero-Trust Identity Verification', 'Privileged Access Management']
   }
 ];
 
 export function ServicesEnhanced() {
   return (
-    <section className="bg-[#08090B] py-24 px-6 relative overflow-hidden border-t border-white/5">
-      {/* Global grid removed to keep bg color solid #08090B */}
+    <section className="bg-linear-to-b from-cyan-50/20 via-white to-white py-24 px-6 relative overflow-hidden border-t border-cyan-100">
+      {/* Darker Dot Grid with Fade Out */}
+      <div className="absolute inset-0 dot-grid-cyan pointer-events-none [mask-image:radial-gradient(circle_at_center,black_40%,transparent_80%)]" />
       
-      <div className="max-w-6xl mx-auto relative z-10">
-        <div className="mb-20">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-12 bg-cyan-500" />
-            <span className="text-[9px] font-black text-cyan-500 uppercase tracking-[0.4em]">Operational_Matrix</span>
+      <div className="max-w-7xl mx-auto relative z-10">
+        <div className="mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8 text-center lg:text-left">
+          <div className="flex-1">
+            <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
+              <div className="h-px w-10 bg-cyan-700" />
+              <span className="text-[10px] font-black text-cyan-700 uppercase tracking-[0.4em]">Tactical_Service_Matrix_V4</span>
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-slate-900 uppercase leading-[0.9]">
+              CORE <br />
+              <span className="text-transparent bg-clip-text bg-linear-to-b from-cyan-500 via-cyan-600 to-cyan-800 italic font-medium">CAPABILITIES.</span>
+            </h2>
           </div>
-          
-          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter text-white uppercase leading-none mb-6">
-            DEFENSE <br />
-            <span className="text-white/20 italic font-medium">CAPACITY.</span>
-          </h2>
+          <div className="max-w-md space-y-4 mx-auto lg:mx-0">
+            <p className="text-sm sm:text-base text-slate-700 font-bold leading-relaxed border-l-4 border-cyan-600 pl-6 uppercase tracking-wider">
+              Our modular security stack provides end-to-end protection across the entire digital attack surface, from the physical hardware layer to complex multi-cloud environments.
+            </p>
+            <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em] pl-7">
+              Optimized for high-compliance industries including Finance, Healthcare, and Government sectors.
+            </p>
+          </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ServiceCard key={service.id} service={service} index={index} />
           ))}
@@ -74,67 +89,60 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative h-96 rounded-xl bg-[#080809] border border-white/5 overflow-hidden hover:border-cyan-500/30 transition-all duration-500"
+      className="group relative h-[520px] rounded-[2rem] bg-white border border-cyan-100 overflow-hidden hover:border-cyan-600 shadow-premium hover:shadow-cyan transition-all duration-500"
     >
-      {/* --- REDUCED 8PX MICRO-GRID WITH FADE --- */}
-      <div 
-        className="absolute inset-0 opacity-[0.04] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none z-10"
-        style={{
-          backgroundImage: `
-            linear-gradient(to right, #ffffff 1px, transparent 1px),
-            linear-gradient(to bottom, #ffffff 1px, transparent 1px)
-          `,
-          backgroundSize: '8px 8px',
-          maskImage: 'radial-gradient(circle at 50% 0%, black 10%, transparent 75%)',
-          WebkitMaskImage: 'radial-gradient(circle at 50% 0%, black 10%, transparent 75%)',
-        }}
-      />
+      {/* --- PREMIUM DOT PATTERN --- */}
+      <div className="absolute inset-0 btn-dot-pattern opacity-0 group-hover:opacity-10 transition-opacity z-10" />
 
-      {/* Image Reveal */}
-      <div className="absolute inset-0 z-0 opacity-[0.05] group-hover:opacity-20 transition-all duration-1000">
+      {/* Image Reveal with color */}
+      <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-40 transition-all duration-1000">
         <Image
           src={service.image}
           alt={service.title}
           fill
-          className="object-cover grayscale group-hover:scale-110 transition-transform duration-1000"
+          className="object-cover group-hover:scale-110 transition-transform duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#080809] via-[#080809]/80 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-b from-transparent via-white/80 to-white" />
       </div>
 
-      {/* Content */}
-      <div className="relative z-30 h-full p-6 flex flex-col justify-between">
-        <div className="space-y-6">
-          <div className="w-10 h-10 rounded-lg bg-black border border-white/10 flex items-center justify-center text-cyan-500 group-hover:bg-cyan-500 group-hover:text-black transition-all duration-500">
-            {service.icon}
+      <div className="relative z-20 h-full p-8 flex flex-col justify-between">
+        <div>
+          <div className="flex justify-between items-start mb-8">
+            <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-premium group-hover:bg-cyan-700 transition-colors">
+              <div className="group-hover:scale-110 transition-transform duration-500">
+                {service.icon}
+              </div>
+            </div>
+            <span className="text-[12px] font-black text-cyan-200 group-hover:text-cyan-700 transition-colors tracking-widest">LAYER_{index + 1}</span>
           </div>
-          
-          <div>
-            <h3 className="text-sm font-black text-white mb-2 tracking-widest uppercase group-hover:text-cyan-400 transition-colors">
-              {service.title}
-            </h3>
-            <p className="text-[10px] text-slate-500 leading-relaxed uppercase tracking-wider font-medium opacity-80 group-hover:opacity-100">
-              {service.description}
-            </p>
-          </div>
+
+          <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-cyan-700 transition-colors uppercase leading-none">
+            {service.title}
+          </h3>
+          <p className="text-xs text-slate-600 leading-relaxed font-bold opacity-90 group-hover:text-slate-900 transition-colors mb-8">
+            {service.description}
+          </p>
+
+          <ul className="space-y-3">
+            {service.features.map((feature: string) => (
+              <li key={feature} className="flex items-center gap-3 text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-slate-700 transition-colors">
+                <div className="w-1.5 h-1.5 rounded-full bg-cyan-600 shadow-[0_0_8px_#0891b2]" />
+                {feature}
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* Footer Track */}
-        <div className="pt-4 mt-auto">
-          <div className="flex items-center justify-between mb-3">
-            <span className="text-[8px] font-black text-white/10 uppercase tracking-[0.3em] group-hover:text-cyan-500/40 transition-colors">
-              SYS_ACTIVE
-            </span>
-            <motion.div animate={{ x: hovered ? 0 : 5, opacity: hovered ? 1 : 0 }}>
-              <ArrowRight className="w-3 h-3 text-cyan-400" />
-            </motion.div>
-          </div>
-          <div className="h-px w-full bg-white/5 relative overflow-hidden">
-            <motion.div 
-              initial={{ width: '0%' }}
-              animate={{ width: hovered ? '100%' : '0%' }}
-              className="absolute inset-y-0 left-0 bg-cyan-500 shadow-[0_0_8px_#22d3ee]" 
-            />
-          </div>
+        <div>
+          <motion.div 
+            animate={hovered ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
+            className="pt-6 border-t-2 border-cyan-50 flex items-center justify-between text-[10px] font-black text-cyan-700 uppercase tracking-widest"
+          >
+            <span>Initialize Deployment</span>
+            <div className="w-7 h-7 rounded-full bg-cyan-600 flex items-center justify-center text-white">
+               <ArrowRight className="w-3.5 h-3.5" />
+            </div>
+          </motion.div>
         </div>
       </div>
     </motion.div>
