@@ -1,79 +1,76 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Star, Quote } from 'lucide-react'
+import { Star, Quote, ArrowRight } from 'lucide-react'
 
 const testimonials = [
   {
-    name: 'Sarah Johnson',
-    title: 'CSO',
-    company: 'Enterprise Solutions Inc',
+    name: 'Sarah_Johnson_V4',
+    title: 'CHIEF SECURITY OFFICER',
+    company: 'Enterprise_Systems_Global',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop',
-    content: 'DM Systems transformed our security posture. Their expertise and 24/7 monitoring gave us the confidence we needed as we scaled.',
+    content: 'DM_Systems architected a multi-layered defense-in-depth strategy that successfully neutralized 12M+ intrusion attempts within the first quarter of deployment.',
     rating: 5,
+    status: 'VERIFIED_PARTNER'
   },
   {
-    name: 'Michael Chen',
-    title: 'IT Director',
-    company: 'Financial Services Group',
+    name: 'Michael_Chen_Sentinel',
+    title: 'IT INFRASTRUCTURE DIRECTOR',
+    company: 'Financial_Core_Trust',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop',
-    content: 'Professional, responsive, and deeply knowledgeable. They understood our compliance requirements better than we did.',
+    content: 'The precision of their AI-driven anomaly detection is unparalleled. We achieved 100% compliance alignment across 12 international regulatory frameworks.',
     rating: 5,
+    status: 'TACTICAL_ALIGNED'
   },
   {
-    name: 'Emily Rodriguez',
-    title: 'Infra Manager',
-    company: 'Healthcare Innovations',
+    name: 'Emily_Rodriguez_Alpha',
+    title: 'INFRASTRUCTURE MANAGER',
+    company: 'BioShield_Healthcare',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop',
-    content: 'Outstanding service. The security dashboard they provided gives us visibility we never had before. Highly recommended.',
+    content: 'Deployment of their Sentinel-V4 nodes provided real-time visibility into our edge-computing clusters that we previously thought was technically impossible.',
     rating: 5,
+    status: 'SYSTEMS_SECURED'
   },
 ]
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-6 bg-[#08090B] relative overflow-hidden">
-            <div className="absolute top-0 left-50 right-50 h-px bg-linear-to-r from-transparent via-cyan-500/20 to-transparent" />
+    <section className="py-24 px-6 bg-white relative overflow-hidden border-t border-slate-200">
+      {/* Darker Dot Grid with Fade Out */}
+      <div className="absolute inset-0 dot-grid-zinc pointer-events-none [mask-image:radial-gradient(circle_at_center,black_40%,transparent_80%)]" />
       
-      {/* --- SHARED PREMIUM BACKGROUND --- */}
-      {/* 1. Dot Pattern with Top-Down Fade Mask (UNCHANGED) */}
-      <div 
-        className="absolute inset-0 opacity-[0.12] mix-blend-screen"
-        style={{
-          backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
-          backgroundSize: '32px 32px',
-          maskImage: 'radial-gradient(ellipse 80% 50% at 50% 0%, black, transparent)',
-          WebkitMaskImage: 'radial-gradient(ellipse 80% 50% at 50% 0%, black, transparent)',
-        }}
-      />
-
-      {/* 2. Top-Center Ambient Glow (UNCHANGED) */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-150 h-75 bg-cyan-500/5 blur-[120px] rounded-full" />
+      {/* Ambient Fusion Beam */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-120 h-60 bg-cyan-600/5 blur-[100px] rounded-full" />
+      </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
         
         {/* Header Section */}
-        <div className="mb-24">
-          <motion.div 
-            initial={{ width: 0 }}
-            whileInView={{ width: 48 }}
-            className="h-px bg-cyan-500 mb-6" 
-          />
-          <span className="text-[10px] font-black text-cyan-500 uppercase tracking-[0.5em] block mb-6">
-            Client_Feedback
-          </span>
+        <div className="mb-16">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="h-px w-10 bg-cyan-700" />
+            <span className="text-[10px] font-black text-cyan-700 uppercase tracking-[0.4em]">Network_Authority_Feedback</span>
+          </div>
           
-          <h2 className="text-6xl md:text-8xl font-bold tracking-tighter text-white leading-[0.85] mb-8">
-            TRUSTED <br />
-            <span className="text-white/20 italic font-medium">VOICES.</span>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter text-slate-900 leading-[0.9] mb-8 uppercase">
+            ELITE <br />
+            <span className="text-cyan-600 italic font-medium">ALLIANCES.</span>
           </h2>
           
-          <p className="text-[11px] text-slate-500 max-w-sm leading-relaxed font-medium uppercase tracking-[0.2em] border-l border-white/10 pl-4">
-            Hear from enterprise leaders who have <br /> 
-            <span className="text-slate-400/40 font-bold tracking-tighter uppercase text-[9px]">
-              hardened their infrastructure with our systems.
-            </span>
-          </p>
+          <div className="max-w-md space-y-4 border-l-4 border-cyan-600 pl-6">
+            <p className="text-sm sm:text-base text-slate-700 font-bold leading-relaxed uppercase tracking-[0.2em]">
+              Validated testimonials from Tier-1 security architects who have successfully implemented DM_Systems protocols.
+            </p>
+            <div className="flex gap-3">
+               <div className="px-2 py-0.5 bg-cyan-50 border border-cyan-100 rounded text-[8px] font-black text-cyan-700 uppercase tracking-widest">
+                 200+ Nodes Secured
+               </div>
+               <div className="px-2 py-0.5 bg-slate-50 border border-slate-200 rounded text-[8px] font-black text-slate-500 uppercase tracking-widest">
+                 SOC2 Verified
+               </div>
+            </div>
+          </div>
         </div>
 
         {/* Testimonials Grid */}
@@ -85,68 +82,62 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="group relative h-full bg-[#080809]/50 backdrop-blur-sm border border-white/4 rounded-2xl p-8 overflow-hidden transition-all duration-500 hover:bg-[#0c0c0e] hover:border-white/8"
+              className="group relative h-full bg-white border border-slate-200 rounded-[2rem] p-8 overflow-hidden transition-all duration-500 hover:border-cyan-600 shadow-premium"
             >
-              {/* INTERNAL CARD DOTS (ADDED WITHOUT CHANGING TOP PATTERN) */}
-              <div 
-                className="absolute inset-0 opacity-[0.05] group-hover:opacity-[0.08] transition-opacity duration-500 pointer-events-none"
-                style={{
-                  backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
-                  backgroundSize: '20px 20px',
-                }}
-              />
-
-              {/* Subtle Noise Texture for card depth */}
-              <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+              {/* INTERNAL CARD DOTS */}
+              <div className="absolute inset-0 btn-dot-pattern opacity-0 group-hover:opacity-10 transition-opacity z-10" />
               
-              {/* Card Corner Accents */}
-              <div className="absolute top-0 left-0 w-8 h-px bg-linear-to-r from-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="absolute top-0 left-0 w-px h-8 bg-linear-to-b from-cyan-500/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Status Badge */}
+              <div className="absolute top-5 right-5 px-1.5 py-0.5 bg-cyan-50 border border-cyan-100 rounded text-[6px] font-black text-cyan-700 uppercase tracking-[0.2em] z-20">
+                {testimonial.status}
+              </div>
 
               {/* Header: Stars & Quote */}
-              <div className="flex justify-between items-start mb-10 relative z-10">
+              <div className="flex justify-between items-start mb-8 relative z-10">
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-2.5 h-2.5 fill-cyan-500 text-cyan-500 opacity-20 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110" />
+                    <Star key={i} className="w-3 h-3 fill-cyan-600 text-cyan-600 group-hover:scale-110 transition-transform duration-500" />
                   ))}
                 </div>
-                <Quote className="w-5 h-5 text-white/5 group-hover:text-cyan-500/10 transition-colors duration-500" />
+                <Quote className="w-8 h-8 text-slate-100 group-hover:text-cyan-600/10 transition-colors duration-500" />
               </div>
 
               {/* Content */}
-              <p className="text-[13px] text-slate-400 font-medium leading-[1.8] mb-12 group-hover:text-slate-200 transition-colors duration-500 relative z-10">
+              <p className="text-xs sm:text-sm text-slate-700 font-bold leading-relaxed mb-8 group-hover:text-slate-900 transition-colors duration-500 relative z-10 uppercase tracking-wide">
                 "{testimonial.content}"
               </p>
 
               {/* Author Footer */}
-              <div className="flex items-center gap-4 pt-8 border-t border-white/3 relative z-10">
-                <div className="relative">
-                    <div className="w-10 h-10 rounded-full overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-700 border border-white/10 shrink-0">
+              <div className="flex items-center gap-4 pt-8 border-t-2 border-slate-50 relative z-10">
+                <div className="relative shrink-0">
+                    <div className="w-12 h-12 rounded-xl overflow-hidden border-2 border-slate-100 group-hover:border-cyan-600/30 transition-all duration-700 shadow-sm">
                         <img
                             src={testimonial.image}
                             alt={testimonial.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
                         />
                     </div>
                     {/* Active Status Dot */}
-                    <div className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-[#020203] rounded-full flex items-center justify-center">
-                        <div className="w-1.5 h-1.5 bg-cyan-500 rounded-full animate-pulse" />
+                    <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-white rounded-full flex items-center justify-center shadow-sm">
+                        <div className="w-2 h-2 bg-cyan-600 rounded-full animate-pulse" />
                     </div>
                 </div>
                 
                 <div className="min-w-0">
-                  <h4 className="text-[11px] font-bold text-white uppercase tracking-[0.15em] mb-1">
+                  <h4 className="text-[9px] font-black text-slate-900 uppercase tracking-[0.15em] mb-1">
                     {testimonial.name}
                   </h4>
-                  <p className="text-[9px] font-medium text-slate-500 uppercase tracking-widest truncate">
-                    {testimonial.title} <span className="text-white/10 mx-1">|</span> 
-                    <span className="text-cyan-500/60 font-black group-hover:text-cyan-400 transition-colors">{testimonial.company}</span>
+                  <p className="text-[8px] font-bold text-slate-400 uppercase tracking-widest truncate">
+                    {testimonial.title}
+                  </p>
+                  <p className="text-[8px] font-black text-cyan-700 uppercase tracking-widest mt-0.5">
+                    {testimonial.company}
                   </p>
                 </div>
               </div>
 
               {/* Hover Glow Bloom */}
-              <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-cyan-500/0 group-hover:bg-cyan-500/3 blur-3xl rounded-full transition-all duration-700" />
+              <div className="absolute -bottom-12 -right-12 w-40 h-40 bg-cyan-600/0 group-hover:bg-cyan-600/5 blur-3xl rounded-full transition-all duration-700" />
             </motion.div>
           ))}
         </div>

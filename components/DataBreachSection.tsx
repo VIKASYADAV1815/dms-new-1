@@ -9,41 +9,45 @@ export function DataBreachSection() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <section className="relative bg-[#08090B] py-20 px-6 overflow-hidden border-y border-white/10">
-      {/* Background Utility Grid */}
-      <div className="absolute inset-0 opacity-[0.02] mask-[radial-gradient(ellipse_at_center,black,transparent)] pointer-events-none bg-[grid:20px_20px] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)]" />
+    <section className="relative bg-white py-24 px-6 overflow-hidden border-y border-cyan-100">
+      {/* Darker Dot Grid with Fade Out */}
+      <div className="absolute inset-0 dot-grid-cyan pointer-events-none [mask-image:radial-gradient(circle_at_center,black_30%,transparent_70%)]" />
       
-      <div className="mx-auto max-w-5xl relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+      <div className="mx-auto max-w-6xl relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
           
           {/* Left: Compact Aesthetic Visual (5 Columns) */}
           <div className="lg:col-span-5 relative group">
-            <div className="absolute -inset-0.5 bg-linear-to-br from-cyan-500/20 to-blue-500/0 rounded-2xl blur-sm opacity-50 group-hover:opacity-100 transition-opacity" />
-            <div className="relative h-120 rounded-2xl overflow-hidden border border-white/10 bg-[#0C0E12]">
+            <div className="absolute -inset-2 bg-linear-to-br from-cyan-600/40 to-blue-600/0 rounded-[2rem] blur-xl opacity-30 group-hover:opacity-60 transition-opacity" />
+            <div className="relative h-[480px] rounded-[2rem] overflow-hidden border border-cyan-200 bg-cyan-50 shadow-premium hover:shadow-cyan transition-all duration-700">
               <Image
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=1000&fit=crop"
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=800&h=1000&fit=crop"
                 alt="Infrastructure"
                 fill
-                className="object-cover grayscale opacity-20 group-hover:opacity-40 group-hover:scale-105 transition-all duration-1000"
+                className="object-cover group-hover:scale-105 transition-all duration-1000"
               />
+              <div className="absolute inset-0 bg-linear-to-t from-white via-transparent to-transparent opacity-60" />
               
               {/* Internal UI Overlays */}
               <div className="absolute top-6 left-6 flex flex-col gap-2">
-                <div className="px-2 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded text-[9px] font-mono text-cyan-500 tracking-tighter">
-                  STATUS: MONITORING
+                <div className="px-3 py-1.5 bg-slate-900/90 backdrop-blur-md border border-slate-700 rounded-lg text-[9px] font-black text-cyan-400 tracking-[0.2em] uppercase shadow-lg">
+                  STATUS: LIVE_MONITOR
                 </div>
-                <div className="px-2 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded text-[9px] font-mono text-white/40 tracking-tighter">
-                  ENCRYPTION: AES-256
+                <div className="px-3 py-1.5 bg-white/90 backdrop-blur-md border border-cyan-100 rounded-lg text-[9px] font-black text-cyan-700 tracking-[0.2em] uppercase shadow-lg">
+                  NODE: CP-772
                 </div>
               </div>
               
-              <div className="absolute bottom-0 inset-x-0 p-6 bg-linear-to-t from-[#08090B] to-transparent">
-                <Activity className="w-4 h-4 text-cyan-500 animate-pulse mb-2" />
-                <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
+              <div className="absolute bottom-0 inset-x-0 p-8 bg-linear-to-t from-white via-white/90 to-transparent">
+                <div className="flex items-center gap-2.5 mb-3">
+                  <Activity className="w-5 h-5 text-cyan-600 animate-pulse" />
+                  <span className="text-[9px] font-black text-cyan-800 uppercase tracking-widest">Network_Throughput</span>
+                </div>
+                <div className="h-1.5 w-full bg-cyan-100 rounded-full overflow-hidden">
                   <motion.div 
                     animate={{ x: ["-100%", "100%"] }}
-                    transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-                    className="h-full w-1/3 bg-linear-to-r from-transparent via-cyan-500/50 to-transparent" 
+                    transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
+                    className="h-full w-1/2 bg-linear-to-r from-transparent via-cyan-600 to-transparent shadow-[0_0_10px_#0891b2]" 
                   />
                 </div>
               </div>
@@ -52,36 +56,45 @@ export function DataBreachSection() {
 
           {/* Right: Technical Content (7 Columns) */}
           <div className="lg:col-span-7 space-y-10 py-2">
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="flex items-center gap-3">
-                <Lock className="w-3 h-3 text-cyan-500" />
-                <span className="text-[10px] font-bold tracking-[0.4em] text-white/20 uppercase">Security Brief 014</span>
+                <div className="p-2.5 rounded-xl bg-cyan-600 text-white shadow-cyan">
+                  <Lock className="w-4 h-4" />
+                </div>
+                <div className="h-px w-10 bg-cyan-200" />
+                <span className="text-[10px] font-black tracking-[0.4em] text-cyan-700 uppercase">Strategic_Intel_014</span>
               </div>
 
-              <h2 className="text-3xl md:text-5xl font-bold text-white leading-[1.05] tracking-tight">
-                DO YOU KNOW THAT THE <br />
-                <span className="text-white/20">AVERAGE COST OF</span> <br />
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-slate-900 leading-[0.9] tracking-tighter uppercase">
+                THE REAL <br />
+                <span className="text-slate-300 italic font-medium">COST OF</span> <br />
                 <span className="relative inline-block">
-                  DATA BREACH IS
-                  <span className="absolute -bottom-1 left-0 w-full h-1 bg-cyan-500/20" />
+                  COMPROMISE
+                  <span className="absolute -bottom-2 left-0 w-full h-2 bg-cyan-600/30" />
                 </span>{' '}
-                <span className="text-cyan-500 font-black">$3.86 MILLION</span>
+                <br />
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-600 to-cyan-800">$4.45 MILLION</span>
               </h2>
               
-              <p className="text-[13px] text-slate-400 leading-relaxed max-w-lg font-medium">
-                Most business owners feel that they don't need to install any type of internet security to protect data and end up paying large sums to hackers. Aside from financial cost we forget that there are other costs like loss of <span className="text-white border-b border-cyan-500/50">Reputation</span> which may be difficult to recover. A small investment in protecting your data is a worthy investment.
-              </p>
+              <div className="space-y-6">
+                <p className="text-base sm:text-lg text-slate-700 leading-relaxed max-w-xl font-bold">
+                  In 2024, the financial impact of a security compromise has reached an all-time high. Beyond the immediate <span className="text-cyan-700 border-b-2 border-cyan-100">Financial Hemorrhaging</span>, organizations face catastrophic <span className="text-slate-900 border-b-2 border-cyan-600/50">Reputational Devaluation</span> that often takes decades to recover.
+                </p>
+                <p className="text-sm text-slate-500 leading-relaxed max-w-lg font-medium border-l-4 border-slate-100 pl-6">
+                  Our tactical engineering team focuses on the "First 15 Minutes" of an attack—the critical window where 90% of data exfiltration can be prevented through automated isolation protocols and kinetic response.
+                </p>
+              </div>
             </div>
 
             {/* Micro-Stats Bento */}
-            <div className="flex gap-4">
-              <div className="flex-1 p-4 rounded-xl bg-white/2 border border-white/6 flex flex-col justify-between group hover:bg-white/4 transition-colors">
-                <span className="text-2xl font-black text-white tracking-tighter">$3.86M</span>
-                <span className="text-[9px] text-slate-500 uppercase font-bold tracking-widest mt-1">Avg Breach Cost</span>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="p-6 rounded-[1.5rem] bg-cyan-50 border border-cyan-100 flex flex-col justify-between group hover:bg-white hover:border-cyan-600/30 shadow-sm hover:shadow-cyan transition-all duration-500">
+                <span className="text-3xl font-black text-slate-900 tracking-tighter group-hover:text-cyan-700 transition-colors">$4.45M</span>
+                <span className="text-[10px] text-cyan-800 uppercase font-black tracking-widest mt-3">Global Avg Cost</span>
               </div>
-              <div className="flex-1 p-4 rounded-xl bg-white/2 border border-white/6 flex flex-col justify-between group hover:bg-white/4 transition-colors">
-                <span className="text-2xl font-black text-cyan-500 tracking-tighter">25+</span>
-                <span className="text-[9px] text-slate-500 uppercase font-bold tracking-widest mt-1">Years Experience</span>
+              <div className="p-6 rounded-[1.5rem] bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:bg-cyan-700 transition-all duration-500 shadow-premium">
+                <span className="text-3xl font-black text-white tracking-tighter">25+</span>
+                <span className="text-[10px] text-cyan-400 uppercase font-black tracking-widest mt-3">Years Tactical Exp</span>
               </div>
             </div>
 
@@ -89,23 +102,28 @@ export function DataBreachSection() {
             <button 
               onMouseEnter={() => setHovered(true)}
               onMouseLeave={() => setHovered(false)}
-              className="group relative flex items-center gap-6"
+              className="group relative flex items-center gap-8"
             >
-              <div className="relative w-12 h-12 rounded-full border border-white/10 flex items-center justify-center overflow-hidden transition-all duration-500 group-hover:border-cyan-500 group-hover:w-40">
-                <div className="absolute inset-0 bg-cyan-500 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+              <div className="relative w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center overflow-hidden transition-all duration-700 group-hover:bg-cyan-600 group-hover:w-56 shadow-premium hover:shadow-cyan">
+                <div className="absolute inset-0 btn-dot-pattern opacity-20" />
                 <AnimatePresence mode="wait">
                   {!hovered ? (
                     <motion.div key="icon" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-                      <ArrowRight className="w-4 h-4 text-white" />
+                      <ArrowRight className="w-6 h-6 text-white" />
                     </motion.div>
                   ) : (
-                    <motion.span key="text" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="relative z-10 text-[10px] font-black uppercase tracking-widest text-white">
-                      Read Report
-                    </motion.span>
+                    <motion.div key="text" initial={{ opacity: 0, x: 10 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -10 }}>
+                      <span className="text-[12px] font-black text-white uppercase tracking-[0.2em] whitespace-nowrap">Explore Strategy</span>
+                    </motion.div>
                   )}
                 </AnimatePresence>
               </div>
-              {!hovered && <span className="text-[10px] font-black text-white/30 uppercase tracking-[0.3em]">View Details</span>}
+              {!hovered && (
+                <div className="flex flex-col text-left">
+                  <span className="text-[10px] font-black text-slate-900 uppercase tracking-[0.3em] group-hover:text-cyan-700 transition-colors">View Deployment</span>
+                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest mt-0.5">Operational Protocol v4.0</span>
+                </div>
+              )}
             </button>
           </div>
         </div>

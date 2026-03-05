@@ -37,19 +37,23 @@ export default function TrustStats() {
   }, [])
 
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 border-y border-border/50 bg-gradient-to-b from-background to-muted/20">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 px-4 sm:px-6 lg:px-8 border-y border-cyan-100 bg-linear-to-b from-white to-cyan-50/30 relative overflow-hidden">
+      {/* Darker Dot Grid with Fade Out */}
+      <div className="absolute inset-0 dot-grid-cyan pointer-events-none [mask-image:radial-gradient(circle_at_center,black_30%,transparent_70%)]" />
+      
+      <div className="max-w-7xl mx-auto relative z-10">
         {/* Client logos strip */}
-        <div className="mb-20 overflow-hidden">
-          <div className="flex items-center justify-center gap-8 mb-4">
-            <span className="text-sm font-semibold text-foreground/50">TRUSTED BY LEADING ENTERPRISES</span>
+        <div className="mb-12 overflow-hidden text-center">
+          <div className="inline-flex items-center gap-3 px-5 py-1.5 rounded-full bg-white border border-cyan-100 shadow-sm mb-10">
+            <div className="w-1.5 h-1.5 rounded-full bg-cyan-600 animate-pulse" />
+            <span className="text-[10px] font-black text-cyan-800 uppercase tracking-[0.3em]">TRUSTED BY GLOBAL LEADERS</span>
           </div>
-          <div className="flex items-center justify-center gap-12 flex-wrap opacity-50">
+          <div className="flex items-center justify-center gap-12 flex-wrap opacity-70">
             {['Fortune 500', 'Global Tech', 'Finance Corp', 'Enterprise AI', 'Cloud Services'].map(
               (client) => (
                 <div
                   key={client}
-                  className="text-foreground/40 font-semibold text-sm tracking-wider"
+                  className="text-slate-900 font-black text-[10px] tracking-[0.2em] uppercase hover:text-cyan-600 transition-colors cursor-default"
                 >
                   {client}
                 </div>
@@ -59,25 +63,29 @@ export default function TrustStats() {
         </div>
 
         {/* Stats Grid */}
-        <div ref={statsRef} className="grid md:grid-cols-4 gap-6">
+        <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => (
             <div
               key={index}
-              className="group p-8 rounded-2xl border border-border/50 bg-card hover:border-accent/50 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer fade-up-delay-1"
+              className="group relative p-8 rounded-2xl border border-cyan-100 bg-white hover:border-cyan-600/40 shadow-premium hover:shadow-cyan hover:-translate-y-1 transition-all duration-500 cursor-pointer overflow-hidden"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              {/* Glow effect */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-              <div className="relative">
-                <div className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-3">
+              {/* Button-like dot pattern on hover */}
+              <div className="absolute inset-0 btn-dot-pattern opacity-0 group-hover:opacity-10 transition-opacity" />
+              
+              <div className="relative z-10">
+                <div className="text-3xl md:text-4xl font-black text-slate-900 tracking-tighter mb-3 group-hover:text-cyan-700 transition-colors">
                   {stat.value}
                 </div>
-                <p className="text-foreground/70 font-medium">{stat.label}</p>
+                <div className="space-y-1.5">
+                  <p className="text-cyan-700 font-black uppercase tracking-[0.1em] text-[9px]">{stat.label}</p>
+                  <p className="text-[9px] text-slate-400 font-bold leading-tight group-hover:text-slate-500 transition-colors uppercase">
+                    {index === 0 ? "Global deployment history" : 
+                     index === 1 ? "Enterprise-level accounts" : 
+                     index === 2 ? "Real-time accuracy" : "Continuous uptime"}
+                  </p>
+                </div>
               </div>
-
-              {/* Border glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-accent/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
             </div>
           ))}
         </div>
