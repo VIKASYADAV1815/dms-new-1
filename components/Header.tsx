@@ -64,10 +64,14 @@ export default function Header() {
 
         {/* --- LOGO --- */}
         <div className="flex items-center gap-2.5 group cursor-pointer relative z-110">
-          <div className="relative w-7 h-7 flex items-center justify-center">
+          <div className="relative w-10 h-10 flex items-center justify-center">
             <div className="absolute inset-0 bg-cyan-600/10 rounded-lg blur-lg group-hover:bg-cyan-600/20 transition-all duration-500" />
-            <div className="relative w-full h-full bg-slate-900 backdrop-blur-md rounded-lg flex items-center justify-center border border-slate-800 overflow-hidden shadow-sm">
-                <Shield className="w-3.5 h-3.5 text-white" />
+            <div className="relative w-full h-full bg-white backdrop-blur-md rounded-lg flex items-center justify-center border border-slate-200 overflow-hidden shadow-sm">
+                <img 
+                  src="https://dmsystems.in/wp-content/uploads/2020/01/DM-Logo-100-100-2014.jpg" 
+                  alt="DM Systems Logo" 
+                  className="w-full h-full object-contain p-1"
+                />
                 <motion.div 
                     animate={{ x: [-35, 35] }} 
                     transition={{ repeat: Infinity, duration: 2, ease: "linear" }}
@@ -76,7 +80,7 @@ export default function Header() {
             </div>
           </div>
           <span className="font-bold text-slate-900 tracking-tighter text-sm uppercase">
-            DM <span className="text-slate-400 font-light">SYSTEMS</span>
+            DM <span className="text-cyan-700 font-light">SYSTEMS</span>
           </span>
         </div>
 
@@ -97,7 +101,7 @@ export default function Header() {
         {/* --- DESKTOP CTA --- */}
         <div className="hidden md:flex items-center gap-3">
           <Button
-            className="group relative bg-slate-900 text-white hover:bg-slate-800 px-5 h-9 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all active:scale-95 shadow-premium overflow-hidden uppercase"
+            className="group relative bg-[#007B98] text-white hover:bg-[#006a84] px-5 h-9 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all active:scale-95 shadow-premium overflow-hidden uppercase"
           >
             <div className="absolute inset-0 btn-dot-pattern opacity-20" />
             <span className="relative z-10 flex items-center gap-2">
@@ -108,7 +112,7 @@ export default function Header() {
 
         {/* --- MOBILE HAMBURGER (CUSTOM MORPH) --- */}
         <button
-          className="lg:hidden relative z-110 w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-slate-900 border border-slate-800"
+          className="lg:hidden relative z-110 w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-[#007B98] border border-[#006a84]"
           onClick={() => setIsOpen(!isOpen)}
         >
           <motion.span 
@@ -149,7 +153,7 @@ export default function Header() {
                 </motion.a>
               ))}
               <motion.div variants={itemVariants} className="pt-6 mt-2 border-t border-slate-100">
-                <Button className="w-full h-14 bg-slate-900 text-white font-extrabold rounded-2xl text-base shadow-xl active:scale-95 uppercase tracking-[0.2em]">
+                <Button className="w-full h-14 bg-[#007B98] text-white font-extrabold rounded-2xl text-base shadow-xl active:scale-95 uppercase tracking-[0.2em] hover:bg-[#006a84]">
                   Contact Specialist
                 </Button>
               </motion.div>
