@@ -20,6 +20,7 @@ export default function Header() {
     { label: 'Industries', href: '#industries' },
     { label: 'Case Studies', href: '#case-studies' },
     { label: 'About', href: '#about' },
+    { label: 'Contact Us', href: '#contact' },
   ];
 
   // Animation variants for the staggered mobile links
