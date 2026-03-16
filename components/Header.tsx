@@ -80,7 +80,7 @@ export default function Header() {
             </div>
           </div>
           <span className="font-bold text-slate-900 tracking-tighter text-sm uppercase">
-            DM <span className="text-cyan-700 font-light">SYSTEMS</span>
+            DM <span className="text-cyan-700 font-bold">SYSTEMS</span>
           </span>
         </div>
 
