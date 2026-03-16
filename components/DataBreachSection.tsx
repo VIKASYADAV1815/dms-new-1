@@ -92,9 +92,9 @@ export function DataBreachSection() {
                 <span className="text-3xl font-black text-slate-900 tracking-tighter group-hover:text-cyan-700 transition-colors">$4.45M</span>
                 <span className="text-[10px] text-cyan-800 uppercase font-black tracking-widest mt-3">Global Avg Cost</span>
               </div>
-              <div className="p-6 rounded-[1.5rem] bg-slate-900 border border-slate-800 flex flex-col justify-between group hover:bg-cyan-700 transition-all duration-500 shadow-premium">
+              <div className="p-6 rounded-[1.5rem] bg-[#007B98] border border-[#006a84] flex flex-col justify-between group hover:bg-[#006a84] transition-all duration-500 shadow-premium">
                 <span className="text-3xl font-black text-white tracking-tighter">25+</span>
-                <span className="text-[10px] text-cyan-400 uppercase font-black tracking-widest mt-3">Years Tactical Exp</span>
+                <span className="text-[10px] text-cyan-100 uppercase font-black tracking-widest mt-3">Years Tactical Exp</span>
               </div>
             </div>
 
@@ -104,7 +104,7 @@ export function DataBreachSection() {
               onMouseLeave={() => setHovered(false)}
               className="group relative flex items-center gap-8"
             >
-              <div className="relative w-16 h-16 rounded-2xl bg-slate-900 border border-slate-800 flex items-center justify-center overflow-hidden transition-all duration-700 group-hover:bg-cyan-600 group-hover:w-56 shadow-premium hover:shadow-cyan">
+              <div className="relative w-16 h-16 rounded-2xl bg-[#007B98] border border-[#006a84] flex items-center justify-center overflow-hidden transition-all duration-700 hover:bg-[#006a84] group-hover:w-56 shadow-premium hover:shadow-cyan">
                 <div className="absolute inset-0 btn-dot-pattern opacity-20" />
                 <AnimatePresence mode="wait">
                   {!hovered ? (

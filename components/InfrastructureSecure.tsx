@@ -73,7 +73,7 @@ export function InfrastructureSecure() {
 
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-16">
-                    <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center group-hover:bg-cyan-700 transition-all duration-500 shadow-premium">
+                    <div className="w-12 h-12 rounded-xl bg-[#007B98] flex items-center justify-center hover:bg-[#006a84] transition-all duration-500 shadow-premium">
                       <feature.icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
                     </div>
                     <span className="text-[12px] font-black text-cyan-100 group-hover:text-cyan-700 transition-colors tracking-widest tabular-nums uppercase">
@@ -102,12 +102,17 @@ export function InfrastructureSecure() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 border-t-2 border-cyan-50 pt-16">
           <div className="flex flex-col sm:flex-row items-center gap-8">
             <div className="flex -space-x-4">
-              {[1, 2, 3, 4].map((i) => (
+              {[
+                "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&q=80",
+                "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&q=80",
+                "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=100&h=100&fit=crop&q=80",
+                "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&q=80"
+              ].map((url, i) => (
                 <div key={i} className="w-12 h-12 rounded-full border-4 border-white bg-slate-100 flex items-center justify-center overflow-hidden shadow-md">
-                  <div className="w-full h-full bg-linear-to-br from-cyan-100 to-cyan-200" />
+                  <img src={url} alt={`Client ${i + 1}`} className="w-full h-full object-cover" />
                 </div>
               ))}
-              <div className="w-12 h-12 rounded-full border-4 border-white bg-slate-900 flex items-center justify-center text-[10px] font-black text-white shadow-premium">
+              <div className="w-12 h-12 rounded-full border-4 border-white bg-[#007B98] flex items-center justify-center text-[10px] font-black text-white shadow-premium">
                 +200
               </div>
             </div>
@@ -125,7 +130,7 @@ export function InfrastructureSecure() {
               </p>
             </div>
             <div className="h-12 w-0.5 bg-cyan-50 hidden sm:block" />
-            <button className="group relative w-full sm:w-auto flex items-center justify-center gap-4 px-8 py-4 bg-slate-900 text-white rounded-xl shadow-premium hover:shadow-cyan overflow-hidden hover:bg-cyan-700 transition-all duration-500">
+            <button className="group relative w-full sm:w-auto flex items-center justify-center gap-4 px-8 py-4 bg-[#007B98] text-white rounded-xl shadow-premium hover:shadow-cyan overflow-hidden hover:bg-[#006a84] transition-all duration-500">
               <div className="absolute inset-0 btn-dot-pattern opacity-20 group-hover:opacity-30 transition-opacity" />
               <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.3em]">Verify Security</span>
               <ArrowUpRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

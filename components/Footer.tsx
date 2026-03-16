@@ -22,8 +22,12 @@ export default function Footer() {
           {/* Brand Module (4 Columns) */}
           <div className="md:col-span-4 space-y-10">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center shadow-premium">
-                <span className="text-white font-black text-[11px]">DM</span>
+              <div className="w-10 h-10 rounded-lg bg-white flex items-center justify-center shadow-premium border border-slate-100 overflow-hidden">
+                <img 
+                  src="https://dmsystems.in/wp-content/uploads/2020/01/DM-Logo-100-100-2014.jpg" 
+                  alt="DM Systems Logo" 
+                  className="w-full h-full object-contain p-1"
+                />
               </div>
               <span className="font-black text-slate-900 text-base tracking-tighter uppercase">DM_Systems</span>
             </div>
@@ -35,7 +39,7 @@ export default function Footer() {
 
             <div className="flex gap-3">
               {[Linkedin, Twitter, Facebook].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-slate-900 hover:text-white transition-all duration-300 shadow-sm hover:shadow-premium">
+                <a key={i} href="#" className="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-[#007B98] hover:text-white transition-all duration-300 shadow-sm hover:shadow-premium">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}

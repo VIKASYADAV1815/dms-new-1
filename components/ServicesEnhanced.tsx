@@ -108,7 +108,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
       <div className="relative z-20 h-full p-8 flex flex-col justify-between">
         <div>
           <div className="flex justify-between items-start mb-8">
-            <div className="w-12 h-12 rounded-xl bg-slate-900 flex items-center justify-center text-white shadow-premium group-hover:bg-cyan-700 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#007B98] flex items-center justify-center text-white shadow-premium hover:bg-[#006a84] transition-colors">
               <div className="group-hover:scale-110 transition-transform duration-500">
                 {service.icon}
               </div>
@@ -139,7 +139,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
             className="pt-6 border-t-2 border-cyan-50 flex items-center justify-between text-[10px] font-black text-cyan-700 uppercase tracking-widest"
           >
             <span>Initialize Deployment</span>
-            <div className="w-7 h-7 rounded-full bg-cyan-600 flex items-center justify-center text-white">
+            <div className="w-7 h-7 rounded-full bg-[#007B98] flex items-center justify-center text-white">
                <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </motion.div>
