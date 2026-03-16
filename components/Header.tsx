@@ -20,6 +20,7 @@ export default function Header() {
     { label: 'Industries', href: '#industries' },
     { label: 'Case Studies', href: '#case-studies' },
     { label: 'About', href: '#about' },
+    { label: 'Contact Us', href: '#contact' },
   ];
 
   // Animation variants for the staggered mobile links
@@ -80,7 +81,7 @@ export default function Header() {
             </div>
           </div>
           <span className="font-bold text-slate-900 tracking-tighter text-sm uppercase">
-            DM <span className="text-cyan-700 font-light">SYSTEMS</span>
+            DM <span className="text-cyan-700 font-bold">SYSTEMS</span>
           </span>
         </div>
 
