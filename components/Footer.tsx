@@ -10,11 +10,10 @@ const footerLinks = {
 export default function Footer() {
   return (
     <footer className="bg-white pt-24 pb-12 px-6 relative overflow-hidden border-t border-slate-200">
-      {/* Darker Dot Grid with Fade Out */}
-      <div className="absolute inset-0 dot-grid-zinc pointer-events-none [mask-image:radial-gradient(circle_at_center,black_30%,transparent_70%)]" />
+      
       
       {/* Top Precision Scan Line */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-cyan-700/40 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-green-700/40 to-transparent" />
 
       <div className="max-w-6xl mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
@@ -39,7 +38,7 @@ export default function Footer() {
 
             <div className="flex gap-3">
               {[Linkedin, Twitter, Facebook].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-[#007B98] hover:text-white transition-all duration-300 shadow-sm hover:shadow-premium">
+                <a key={i} href="#" className="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-[#22C55E] hover:text-white transition-all duration-300 shadow-sm hover:shadow-premium">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
@@ -49,13 +48,13 @@ export default function Footer() {
           {/* Links Grid (5 Columns) */}
           <div className="md:col-span-5 grid grid-cols-2 gap-12">
             <div>
-              <h4 className="text-[11px] font-black text-cyan-700 uppercase tracking-[0.4em] mb-10">Solutions_List</h4>
+              <h4 className="text-[11px] font-black text-green-700 uppercase tracking-[0.4em] mb-10">Solutions_List</h4>
               <ul className="space-y-6">
                 {footerLinks.solutions.map((item) => (
                   <li key={item}>
                     <a href="#" className="group flex items-center text-[12px] text-slate-600 font-bold hover:text-slate-900 transition-colors uppercase tracking-tight">
                       {item}
-                      <ArrowUpRight className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-cyan-700" />
+                      <ArrowUpRight className="w-3 h-3 ml-2 opacity-0 group-hover:opacity-100 transition-opacity text-green-700" />
                     </a>
                   </li>
                 ))}
@@ -80,7 +79,7 @@ export default function Footer() {
             <h4 className="text-[11px] font-black text-slate-300 uppercase tracking-[0.4em] mb-10">Base_Operations</h4>
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="p-2 rounded-lg bg-slate-50 border border-slate-100 text-cyan-700 shadow-sm">
+                <div className="p-2 rounded-lg bg-slate-50 border border-slate-100 text-green-700 shadow-sm">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div className="text-[11px] text-slate-700 uppercase tracking-widest leading-relaxed font-bold">
@@ -107,7 +106,7 @@ export default function Footer() {
         {/* Bottom Bar: Pure Micro-Data */}
         <div className="pt-12 border-t-2 border-slate-50 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-4">
-            <div className="w-2.5 h-2.5 rounded-full bg-cyan-700 animate-pulse shadow-[0_0_8px_#0891b2]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-green-700 animate-pulse shadow-[0_0_8px_#22C55E]" />
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">
               &copy; 2024 DM_Systems_Intl. All_Systems_Operational.
             </p>

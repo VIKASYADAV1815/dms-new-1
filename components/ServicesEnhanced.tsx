@@ -42,25 +42,24 @@ const services = [
 
 export function ServicesEnhanced() {
   return (
-    <section className="bg-linear-to-b from-cyan-50/20 via-white to-white py-24 px-6 relative overflow-hidden border-t border-cyan-100">
-      {/* Darker Dot Grid with Fade Out */}
-      <div className="absolute inset-0 dot-grid-cyan pointer-events-none [mask-image:radial-gradient(circle_at_center,black_40%,transparent_80%)]" />
+    <section className="bg-white py-24 px-6 relative overflow-hidden border-t border-slate-100">
+      
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="mb-16 flex flex-col lg:flex-row lg:items-end justify-between gap-8 text-center lg:text-left">
           <div className="flex-1">
             <div className="flex items-center justify-center lg:justify-start gap-3 mb-4">
-              <div className="h-px w-10 bg-cyan-700" />
-              <span className="text-[10px] font-black text-cyan-700 uppercase tracking-[0.4em]">Tactical_Service_Matrix_V4</span>
+              <div className="h-px w-10 bg-green-700" />
+              <span className="text-[10px] font-black text-green-700 uppercase tracking-[0.4em]">Tactical_Service_Matrix_V4</span>
             </div>
             
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-slate-900 uppercase leading-[0.9]">
               CORE <br />
-              <span className="text-transparent bg-clip-text bg-linear-to-b from-cyan-500 via-cyan-600 to-cyan-800 italic font-medium">CAPABILITIES.</span>
+              <span className="text-transparent bg-clip-text bg-linear-to-b from-green-500 via-green-600 to-green-800 italic font-medium">CAPABILITIES.</span>
             </h2>
           </div>
           <div className="max-w-md space-y-4 mx-auto lg:mx-0">
-            <p className="text-sm sm:text-base text-slate-700 font-bold leading-relaxed border-l-4 border-cyan-600 pl-6 uppercase tracking-wider">
+            <p className="text-sm sm:text-base text-slate-700 font-bold leading-relaxed border-l-4 border-green-600 pl-6 uppercase tracking-wider">
               Our modular security stack provides end-to-end protection across the entire digital attack surface, from the physical hardware layer to complex multi-cloud environments.
             </p>
             <p className="text-[10px] text-slate-400 font-black uppercase tracking-[0.2em] pl-7">
@@ -89,7 +88,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="group relative h-[520px] rounded-[2rem] bg-white border border-cyan-100 overflow-hidden hover:border-cyan-600 shadow-premium hover:shadow-cyan transition-all duration-500"
+      className="group relative h-[520px] rounded-[2rem] bg-white border border-slate-100 overflow-hidden hover:border-green-600 shadow-premium hover:shadow-green transition-all duration-500"
     >
       {/* --- PREMIUM DOT PATTERN --- */}
       <div className="absolute inset-0 btn-dot-pattern opacity-0 group-hover:opacity-10 transition-opacity z-10" />
@@ -108,15 +107,15 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
       <div className="relative z-20 h-full p-8 flex flex-col justify-between">
         <div>
           <div className="flex justify-between items-start mb-8">
-            <div className="w-12 h-12 rounded-xl bg-[#007B98] flex items-center justify-center text-white shadow-premium hover:bg-[#006a84] transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-[#22C55E] flex items-center justify-center text-white shadow-premium hover:bg-[#16A34A] transition-colors">
               <div className="group-hover:scale-110 transition-transform duration-500">
                 {service.icon}
               </div>
             </div>
-            <span className="text-[12px] font-black text-cyan-200 group-hover:text-cyan-700 transition-colors tracking-widest">LAYER_{index + 1}</span>
+            <span className="text-[12px] font-black text-slate-200 group-hover:text-green-700 transition-colors tracking-widest">LAYER_{index + 1}</span>
           </div>
 
-          <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-cyan-700 transition-colors uppercase leading-none">
+          <h3 className="text-2xl font-black text-slate-900 mb-4 tracking-tight group-hover:text-green-700 transition-colors uppercase leading-none">
             {service.title}
           </h3>
           <p className="text-xs text-slate-600 leading-relaxed font-bold opacity-90 group-hover:text-slate-900 transition-colors mb-8">
@@ -126,7 +125,7 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
           <ul className="space-y-3">
             {service.features.map((feature: string) => (
               <li key={feature} className="flex items-center gap-3 text-[10px] font-black text-slate-400 uppercase tracking-widest group-hover:text-slate-700 transition-colors">
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-600 shadow-[0_0_8px_#0891b2]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-green-600 shadow-[0_0_8px_#22C55E]" />
                 {feature}
               </li>
             ))}
@@ -136,10 +135,10 @@ function ServiceCard({ service, index }: { service: any, index: number }) {
         <div>
           <motion.div 
             animate={hovered ? { x: 0, opacity: 1 } : { x: -20, opacity: 0 }}
-            className="pt-6 border-t-2 border-cyan-50 flex items-center justify-between text-[10px] font-black text-cyan-700 uppercase tracking-widest"
+            className="pt-6 border-t-2 border-slate-50 flex items-center justify-between text-[10px] font-black text-green-700 uppercase tracking-widest"
           >
             <span>Initialize Deployment</span>
-            <div className="w-7 h-7 rounded-full bg-[#007B98] flex items-center justify-center text-white">
+            <div className="w-7 h-7 rounded-full bg-[#22C55E] flex items-center justify-center text-white">
                <ArrowRight className="w-3.5 h-3.5" />
             </div>
           </motion.div>
