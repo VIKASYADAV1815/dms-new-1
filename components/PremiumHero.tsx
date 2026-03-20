@@ -48,7 +48,7 @@ export function PremiumHero() {
         >
           {/* High-End Trust Badge */}
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm mb-6 sm:mb-8">
-            <Shield className="w-3.5 h-3.5 text-cyan-600" />
+            <Shield className="w-3.5 h-3.5 text-green-600" />
             <span className="text-[10px] sm:text-[11px] font-bold tracking-wide text-slate-700 uppercase">
               Enterprise Security V2.0
             </span>
@@ -57,7 +57,7 @@ export function PremiumHero() {
           {/* Compact, Powerful Headline */}
           <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] sm:leading-[1.05] mb-6">
             Tactical defense for <br className="hidden sm:block" />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-blue-600">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-green-700">
               critical infrastructure.
             </span>
           </h1>
@@ -69,7 +69,7 @@ export function PremiumHero() {
 
           {/* High-Conversion CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
-            <button className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-[#007B98] text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_8px_30px_rgb(0,123,152,0.12)] hover:shadow-[0_8px_30px_rgb(0,123,152,0.3)] hover:bg-[#006a84] transition-all active:scale-[0.98] flex items-center justify-center gap-2 group uppercase tracking-widest">
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-[#22C55E] text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_8px_30px_rgb(34,197,94,0.12)] hover:shadow-[0_8px_30px_rgb(34,197,94,0.3)] hover:bg-[#16A34A] transition-all active:scale-[0.98] flex items-center justify-center gap-2 group uppercase tracking-widest">
               Deploy Protection 
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
@@ -86,7 +86,7 @@ export function PremiumHero() {
               { icon: Shield, text: "SOC2 Type II Certified" }
             ].map((item, i) => (
               <div key={i} className="flex items-center gap-2">
-                <item.icon className="w-3.5 h-3.5 sm:w-4 h-4 text-cyan-600" />
+                <item.icon className="w-3.5 h-3.5 sm:w-4 h-4 text-green-600" />
                 <span className="text-[10px] sm:text-xs font-semibold text-slate-600">{item.text}</span>
               </div>
             ))}

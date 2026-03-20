@@ -66,7 +66,7 @@ export default function Header() {
         {/* --- LOGO --- */}
         <div className="flex items-center gap-2.5 group cursor-pointer relative z-110">
           <div className="relative w-10 h-10 flex items-center justify-center">
-            <div className="absolute inset-0 bg-cyan-600/10 rounded-lg blur-lg group-hover:bg-cyan-600/20 transition-all duration-500" />
+            <div className="absolute inset-0 bg-green-600/10 rounded-lg blur-lg group-hover:bg-green-600/20 transition-all duration-500" />
             <div className="relative w-full h-full bg-white backdrop-blur-md rounded-lg flex items-center justify-center border border-slate-200 overflow-hidden shadow-sm">
                 <img 
                   src="https://dmsystems.in/wp-content/uploads/2020/01/DM-Logo-100-100-2014.jpg" 
@@ -81,7 +81,7 @@ export default function Header() {
             </div>
           </div>
           <span className="font-bold text-slate-900 tracking-tighter text-sm uppercase">
-            DM <span className="text-cyan-700 font-bold">SYSTEMS</span>
+            DM <span className="text-green-700 font-bold">SYSTEMS</span>
           </span>
         </div>
 
@@ -91,10 +91,10 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className="px-3 py-1.5 text-[10px] font-black text-slate-700 hover:text-cyan-700 transition-all rounded-full hover:bg-slate-100 relative group overflow-hidden uppercase tracking-[0.2em]"
+              className="px-3 py-1.5 text-[10px] font-black text-slate-700 hover:text-green-700 transition-all rounded-full hover:bg-slate-100 relative group overflow-hidden uppercase tracking-[0.2em]"
             >
               {link.label}
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-cyan-600 transition-all group-hover:w-1/2" />
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-green-600 transition-all group-hover:w-1/2" />
             </a>
           ))}
         </nav>
@@ -102,7 +102,7 @@ export default function Header() {
         {/* --- DESKTOP CTA --- */}
         <div className="hidden md:flex items-center gap-3">
           <Button
-            className="group relative bg-[#007B98] text-white hover:bg-[#006a84] px-5 h-9 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all active:scale-95 shadow-premium overflow-hidden uppercase"
+            className="group relative bg-[#22C55E] text-white hover:bg-[#16A34A] px-5 h-9 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all active:scale-95 shadow-premium overflow-hidden uppercase"
           >
             <div className="absolute inset-0 btn-dot-pattern opacity-20" />
             <span className="relative z-10 flex items-center gap-2">
@@ -113,7 +113,7 @@ export default function Header() {
 
         {/* --- MOBILE HAMBURGER (CUSTOM MORPH) --- */}
         <button
-          className="lg:hidden relative z-110 w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-[#007B98] border border-[#006a84]"
+          className="lg:hidden relative z-110 w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-[#22C55E] border border-[#16A34A]"
           onClick={() => setIsOpen(!isOpen)}
         >
           <motion.span 
@@ -154,7 +154,7 @@ export default function Header() {
                 </motion.a>
               ))}
               <motion.div variants={itemVariants} className="pt-6 mt-2 border-t border-slate-100">
-                <Button className="w-full h-14 bg-[#007B98] text-white font-extrabold rounded-2xl text-base shadow-xl active:scale-95 uppercase tracking-[0.2em] hover:bg-[#006a84]">
+                <Button className="w-full h-14 bg-[#22C55E] text-white font-extrabold rounded-2xl text-base shadow-xl active:scale-95 uppercase tracking-[0.2em] hover:bg-[#16A34A]">
                   Contact Specialist
                 </Button>
               </motion.div>
