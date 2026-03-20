@@ -36,7 +36,7 @@ export default function CTA() {
           {/* --- CONTENT --- */}
           <div className="relative z-10 flex flex-col items-center text-center">
             {/* Minimal Icon with pulse */}
-            <div className="relative w-12 h-12 rounded-xl bg-[#22C55E] flex items-center justify-center mb-8 shadow-premium">
+            <div className="relative w-12 h-12 rounded-xl bg-[#15803D] flex items-center justify-center mb-8 shadow-premium">
               <Shield className="w-5 h-5 text-white" />
               <div className="absolute inset-0 rounded-xl bg-green-600/20 animate-pulse" />
             </div>
@@ -57,7 +57,7 @@ export default function CTA() {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group/btn relative px-10 py-4 bg-[#22C55E] rounded-xl shadow-premium transition-all duration-500 overflow-hidden hover:bg-[#16A34A]"
+              className="group/btn relative px-10 py-4 bg-[#15803D] rounded-xl shadow-premium transition-all duration-500 overflow-hidden hover:bg-[#166534]"
             >
               <div className="absolute inset-0 btn-dot-pattern opacity-10 group-hover/btn:opacity-20 transition-opacity" />
               <div className="relative z-10 flex items-center gap-3 text-white font-black text-[10px] uppercase tracking-[0.25em]">
@@ -69,7 +69,7 @@ export default function CTA() {
             {/* Status Indicators */}
             <div className="mt-12 flex items-center gap-8">
               <div className="flex items-center gap-2.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-700 shadow-[0_0_12px_#22C55E]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-green-700 shadow-[0_0_12px_#15803D]" />
                 <span className="text-[9px] font-black text-slate-400 uppercase tracking-[0.3em]">v2.0_SECURE</span>
               </div>
               <div className="flex items-center gap-2.5">

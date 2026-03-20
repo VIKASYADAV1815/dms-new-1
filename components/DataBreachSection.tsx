@@ -46,7 +46,7 @@ export function DataBreachSection() {
                   <motion.div 
                     animate={{ x: ["-100%", "100%"] }}
                     transition={{ repeat: Infinity, duration: 2.5, ease: "linear" }}
-                    className="h-full w-1/2 bg-linear-to-r from-transparent via-green-600 to-transparent shadow-[0_0_10px_#22C55E]" 
+                    className="h-full w-1/2 bg-linear-to-r from-transparent via-green-600 to-transparent shadow-[0_0_10px_#15803D]" 
                   />
                 </div>
               </div>
@@ -91,7 +91,7 @@ export function DataBreachSection() {
                 <span className="text-3xl font-black text-slate-900 tracking-tighter group-hover:text-green-700 transition-colors">$4.45M</span>
                 <span className="text-[10px] text-green-800 uppercase font-black tracking-widest mt-3">Global Avg Cost</span>
               </div>
-              <div className="p-6 rounded-[1.5rem] bg-[#22C55E] border border-[#16A34A] flex flex-col justify-between group hover:bg-[#16A34A] transition-all duration-500 shadow-premium">
+              <div className="p-6 rounded-[1.5rem] bg-[#15803D] border border-[#166534] flex flex-col justify-between group hover:bg-[#166534] transition-all duration-500 shadow-premium">
                 <span className="text-3xl font-black text-white tracking-tighter">25+</span>
                 <span className="text-[10px] text-green-100 uppercase font-black tracking-widest mt-3">Years Tactical Exp</span>
               </div>
@@ -103,7 +103,7 @@ export function DataBreachSection() {
               onMouseLeave={() => setHovered(false)}
               className="group relative flex items-center gap-8"
             >
-              <div className="relative w-16 h-16 rounded-2xl bg-[#22C55E] border border-[#16A34A] flex items-center justify-center overflow-hidden transition-all duration-700 hover:bg-[#16A34A] group-hover:w-56 shadow-premium hover:shadow-green">
+              <div className="relative w-16 h-16 rounded-2xl bg-[#15803D] border border-[#166534] flex items-center justify-center overflow-hidden transition-all duration-700 hover:bg-[#166534] group-hover:w-56 shadow-premium hover:shadow-green">
                 <div className="absolute inset-0 btn-dot-pattern opacity-20" />
                 <AnimatePresence mode="wait">
                   {!hovered ? (

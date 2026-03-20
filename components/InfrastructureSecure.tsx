@@ -37,7 +37,7 @@ export function InfrastructureSecure() {
         {/* Header */}
         <div className="max-w-4xl mb-16">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-2.5 h-2.5 rounded-full bg-green-600 shadow-[0_0_15px_#22C55E] animate-pulse" />
+            <div className="w-2.5 h-2.5 rounded-full bg-green-600 shadow-[0_0_15px_#15803D] animate-pulse" />
             <span className="text-[10px] font-black text-green-700 uppercase tracking-[0.4em]">Audit_Protocol_v2.0</span>
           </div>
           <h2 className="text-4xl md:text-6xl font-black text-slate-900 tracking-tighter leading-[0.9] mb-8 uppercase">
@@ -72,7 +72,7 @@ export function InfrastructureSecure() {
 
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-16">
-                    <div className="w-12 h-12 rounded-xl bg-[#22C55E] flex items-center justify-center hover:bg-[#16A34A] transition-all duration-500 shadow-premium">
+                    <div className="w-12 h-12 rounded-xl bg-[#15803D] flex items-center justify-center hover:bg-[#166534] transition-all duration-500 shadow-premium">
                       <feature.icon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
                     </div>
                     <span className="text-[12px] font-black text-green-100 group-hover:text-green-700 transition-colors tracking-widest tabular-nums uppercase">
@@ -111,7 +111,7 @@ export function InfrastructureSecure() {
                   <img src={url} alt={`Client ${i + 1}`} className="w-full h-full object-cover" />
                 </div>
               ))}
-              <div className="w-12 h-12 rounded-full border-4 border-white bg-[#22C55E] flex items-center justify-center text-[10px] font-black text-white shadow-premium">
+              <div className="w-12 h-12 rounded-full border-4 border-white bg-[#15803D] flex items-center justify-center text-[10px] font-black text-white shadow-premium">
                 +200
               </div>
             </div>
@@ -125,11 +125,11 @@ export function InfrastructureSecure() {
             <div className="text-center sm:text-right space-y-1 hidden sm:block">
               <p className="text-[10px] font-black text-slate-900 uppercase tracking-[0.2em]">Status: Operational</p>
               <p className="text-[10px] font-black text-green-700 uppercase tracking-widest flex items-center justify-end gap-2">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-600 animate-pulse shadow-[0_0_8px_#22C55E]" /> All Systems Nominal
+                <span className="w-1.5 h-1.5 rounded-full bg-green-600 animate-pulse shadow-[0_0_8px_#15803D]" /> All Systems Nominal
               </p>
             </div>
             <div className="h-12 w-0.5 bg-slate-50 hidden sm:block" />
-            <button className="group relative w-full sm:w-auto flex items-center justify-center gap-4 px-8 py-4 bg-[#22C55E] text-white rounded-xl shadow-premium hover:shadow-green overflow-hidden hover:bg-[#16A34A] transition-all duration-500">
+            <button className="group relative w-full sm:w-auto flex items-center justify-center gap-4 px-8 py-4 bg-[#15803D] text-white rounded-xl shadow-premium hover:shadow-green overflow-hidden hover:bg-[#166534] transition-all duration-500">
               <div className="absolute inset-0 btn-dot-pattern opacity-20 group-hover:opacity-30 transition-opacity" />
               <span className="relative z-10 text-[10px] font-black uppercase tracking-[0.3em]">Verify Security</span>
               <ArrowUpRight className="relative z-10 w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />

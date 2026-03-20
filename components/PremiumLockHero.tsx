@@ -146,7 +146,7 @@ export function PremiumLockHero() {
 
             {/* Action Set */}
             <div className="flex flex-col sm:flex-row items-center gap-8 pt-6">
-              <button className="group relative w-full sm:w-auto px-10 py-4 bg-[#22C55E] text-white font-black text-[10px] uppercase tracking-[0.3em] rounded-xl hover:bg-[#16A34A] transition-all shadow-premium hover:shadow-green overflow-hidden">
+              <button className="group relative w-full sm:w-auto px-10 py-4 bg-[#15803D] text-white font-black text-[10px] uppercase tracking-[0.3em] rounded-xl hover:bg-[#166534] transition-all shadow-premium hover:shadow-green overflow-hidden">
                 <div className="absolute inset-0 btn-dot-pattern opacity-20" />
                 <span className="relative z-10">Initialize Audit</span>
               </button>

@@ -102,7 +102,7 @@ export default function Header() {
         {/* --- DESKTOP CTA --- */}
         <div className="hidden md:flex items-center gap-3">
           <Button
-            className="group relative bg-[#22C55E] text-white hover:bg-[#16A34A] px-5 h-9 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all active:scale-95 shadow-premium overflow-hidden uppercase"
+            className="group relative bg-[#15803D] text-white hover:bg-[#166534] px-5 h-9 rounded-lg text-[9px] font-black tracking-[0.2em] transition-all active:scale-95 shadow-premium overflow-hidden uppercase"
           >
             <div className="absolute inset-0 btn-dot-pattern opacity-20" />
             <span className="relative z-10 flex items-center gap-2">
@@ -113,7 +113,7 @@ export default function Header() {
 
         {/* --- MOBILE HAMBURGER (CUSTOM MORPH) --- */}
         <button
-          className="lg:hidden relative z-110 w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-[#22C55E] border border-[#16A34A]"
+          className="lg:hidden relative z-110 w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-xl bg-[#15803D] border border-[#166534]"
           onClick={() => setIsOpen(!isOpen)}
         >
           <motion.span 
@@ -154,7 +154,7 @@ export default function Header() {
                 </motion.a>
               ))}
               <motion.div variants={itemVariants} className="pt-6 mt-2 border-t border-slate-100">
-                <Button className="w-full h-14 bg-[#22C55E] text-white font-extrabold rounded-2xl text-base shadow-xl active:scale-95 uppercase tracking-[0.2em] hover:bg-[#16A34A]">
+                <Button className="w-full h-14 bg-[#15803D] text-white font-extrabold rounded-2xl text-base shadow-xl active:scale-95 uppercase tracking-[0.2em] hover:bg-[#166534]">
                   Contact Specialist
                 </Button>
               </motion.div>

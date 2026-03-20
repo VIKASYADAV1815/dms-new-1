@@ -136,13 +136,13 @@ export default function Hero() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8 fade-up-delay-1">
-              <Button className="bg-[#22C55E] hover:bg-[#16A34A] text-white px-6 h-12 text-base magnetic-button border-none">
+              <Button className="bg-[#15803D] hover:bg-[#166534] text-white px-6 h-12 text-base magnetic-button border-none">
                 Request Security Consultation
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Button>
               <Button
                 variant="outline"
-                className="border-2 border-[#22C55E] text-[#22C55E] hover:bg-[#22C55E]/10 px-6 h-12 text-base"
+                className="border-2 border-[#15803D] text-[#15803D] hover:bg-[#15803D]/10 px-6 h-12 text-base"
               >
                 Explore Solutions
               </Button>

@@ -38,7 +38,7 @@ export default function Footer() {
 
             <div className="flex gap-3">
               {[Linkedin, Twitter, Facebook].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-[#22C55E] hover:text-white transition-all duration-300 shadow-sm hover:shadow-premium">
+                <a key={i} href="#" className="w-10 h-10 rounded-xl border border-slate-200 flex items-center justify-center hover:bg-[#15803D] hover:text-white transition-all duration-300 shadow-sm hover:shadow-premium">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
@@ -106,7 +106,7 @@ export default function Footer() {
         {/* Bottom Bar: Pure Micro-Data */}
         <div className="pt-12 border-t-2 border-slate-50 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-4">
-            <div className="w-2.5 h-2.5 rounded-full bg-green-700 animate-pulse shadow-[0_0_8px_#22C55E]" />
+            <div className="w-2.5 h-2.5 rounded-full bg-green-700 animate-pulse shadow-[0_0_8px_#15803D]" />
             <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.4em]">
               &copy; 2024 DM_Systems_Intl. All_Systems_Operational.
             </p>
