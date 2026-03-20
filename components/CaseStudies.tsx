@@ -91,7 +91,7 @@ export default function CaseStudies() {
                 <div className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-green-600 text-[8px] font-black text-white uppercase tracking-widest shadow-premium z-20">
                   {study.layer}
                 </div>
-                <div className="absolute bottom-3 left-3 px-2 py-0.5 rounded-md bg-[#22C55E]/90 backdrop-blur-md text-[8px] font-black text-white uppercase tracking-widest shadow-premium z-20">
+                <div className="absolute bottom-3 left-3 px-2 py-0.5 rounded-md bg-[#15803D]/90 backdrop-blur-md text-[8px] font-black text-white uppercase tracking-widest shadow-premium z-20">
                   {study.industry}
                 </div>
                 {/* Image Overlay Gradient */}
@@ -136,7 +136,7 @@ export default function CaseStudies() {
                     </div>
                     <motion.div 
                       whileHover={{ x: 3 }}
-                      className="w-8 h-8 rounded-lg bg-[#22C55E] flex items-center justify-center text-white shadow-premium hover:bg-[#16A34A] transition-all"
+                      className="w-8 h-8 rounded-lg bg-[#15803D] flex items-center justify-center text-white shadow-premium hover:bg-[#166534] transition-all"
                     >
                        <ArrowRight className="w-4 h-4" />
                     </motion.div>

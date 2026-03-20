@@ -69,7 +69,7 @@ export function PremiumHero() {
 
           {/* High-Conversion CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto px-4 sm:px-0">
-            <button className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-[#22C55E] text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_8px_30px_rgb(34,197,94,0.12)] hover:shadow-[0_8px_30px_rgb(34,197,94,0.3)] hover:bg-[#16A34A] transition-all active:scale-[0.98] flex items-center justify-center gap-2 group uppercase tracking-widest">
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-3.5 sm:py-4 bg-[#15803D] text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_8px_30px_rgb(21,128,61,0.12)] hover:shadow-[0_8px_30px_rgb(21,128,61,0.3)] hover:bg-[#166534] transition-all active:scale-[0.98] flex items-center justify-center gap-2 group uppercase tracking-widest">
               Deploy Protection 
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
